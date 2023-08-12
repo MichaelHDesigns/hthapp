@@ -1,0 +1,60 @@
+/* Styling for the DrivesModal */
+
+.drives-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.drives-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.drives-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.drives-close {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.drives-close:hover {
+  background-color: darkred;
+  color: white;
+  box-shadow: 0px 3px 6px #debf12, 0px -3px 6px #34bcaa;
+}

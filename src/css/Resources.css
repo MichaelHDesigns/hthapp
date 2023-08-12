@@ -1,0 +1,47 @@
+/* Resources.css */
+
+.resource-page {
+  text-align: center;
+}
+
+.resource-container {
+  margin-top: 50px;
+}
+
+.resource-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+}
+
+.resource-card-content {
+  display: flex;
+  align-items: center;
+}
+
+.resource-logo-container {
+  flex: 1;
+  text-align: center;
+}
+
+.resource-logo {
+  max-width: 100px;
+}
+
+.resource-details {
+  flex: 2;
+  text-align: left;
+}
+
+/* Set link color for all states */
+
+.resource-details h3 a {
+  color: blue;
+}
+
+.App-header {
+  text-align: center;
+  margin-bottom: 30px;
+}

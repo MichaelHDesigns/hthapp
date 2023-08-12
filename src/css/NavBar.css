@@ -1,0 +1,95 @@
+/* Styling for the MenuIcon component */
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Media query for smaller screens */
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Styling for navigation links */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: blue;
+}
+
+/* Styles for the dropdown */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ccc;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #34bcaa;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #34bcaa;
+  background-color: #ccc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

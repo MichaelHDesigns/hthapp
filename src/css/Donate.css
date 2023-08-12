@@ -1,0 +1,41 @@
+/* Styling for the donate button */
+
+.donate-button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.donate-button:hover {
+  background-color: #2980b9;
+  box-shadow: 0px 3px 6px #debf12, 0px -3px 6px #34bcaa;
+}
+
+.donate-close {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.donate-close:hover {
+  background-color: darkred;
+  box-shadow: 0px 3px 6px #debf12, 0px -3px 6px #34bcaa;
+  color: white;
+}

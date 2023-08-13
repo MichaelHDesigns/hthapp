@@ -1,5 +1,6 @@
 /* Styling for the MenuIcon component */
 
+
 .menu-icon {
   display: none;
   cursor: pointer;
@@ -34,6 +35,8 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  margin-top: 2rem;
+  margin-bottom: -5rem;
 }
 
 .nav-links li {
@@ -42,14 +45,14 @@
 
 .nav-links a {
   text-decoration: none;
-  color: black;
+  color: #34bcaa;
   font-size: 20px;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: blue;
+  color: #debf12;
 }
 
 /* Styles for the dropdown */
@@ -63,7 +66,7 @@
   font-size: 20px;
   border: none;
   outline: none;
-  color: black;
+  color: #34bcaa;
   font-weight: bold;
   background-color: transparent;
   cursor: pointer;
@@ -72,14 +75,14 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ccc;
+  background-color: black;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(52, 188, 170, 1.4);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: #34bcaa;
+  color: #debf12;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -87,7 +90,7 @@
 
 .dropdown-content a:hover {
   color: #34bcaa;
-  background-color: #ccc;
+  background-color: black;
 }
 
 .dropdown:hover .dropdown-content {

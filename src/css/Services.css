@@ -1,5 +1,15 @@
 /* Styling for the Services */
 
+.h,
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+  color: #debf12;
+  background-color: transparent;
+}
+
 .services-modal {
   position: fixed;
   top: 50%;
@@ -73,6 +83,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .search-container input {
@@ -80,6 +91,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 /* Map */
@@ -88,7 +100,8 @@
   height: 50vh;
   width: 50vw;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 6px rgba(52, 188, 170, 1.4);
+  background-color: #fff;
 }
 
 /* Popup Content */
@@ -109,4 +122,19 @@
 
 .leaflet-popup-content a:hover {
   text-decoration: underline;
+}
+
+
+* {
+    text-decoration: none;
+}
+
+
+
+.leaflet-touch .leaflet-bar a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: black;
+    background-color: white;
 }

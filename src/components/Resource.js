@@ -1,4 +1,30 @@
 import React, { Component } from 'react';
+import logo from '../images/hthlogo.png';
+
+const headerContainerStyles = {
+  position: 'relative',
+};
+
+const headerStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
+};
+
+const logoStyles = {
+  width: '100px',
+  height: 'auto',
+  marginLeft: '30%',
+  backgroundColor: 'transparent',
+};
+
+const titleStyles = {
+  fontSize: '2.5rem',
+  marginRight: '30%',
+  color: '#debf12',
+  backgroundColor: 'transparent',
+};
 
 const resources = [
   {
@@ -25,10 +51,13 @@ const resources = [
 class Resource extends Component {
   render() {
     return (
-      <div className="resource-page">
-        <header className="App-header">
-          <h1>HTH World Resources</h1>
+      <div className="resource-page" style={{ backgroundColor: 'black' }}>
+      <div style={headerContainerStyles}>
+        <header style={headerStyles} className="App-header">
+          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+          <h1 style={titleStyles}>HTH Worldwide</h1>
         </header>
+      </div>
         <div className="resource-container">
           <h2>Homelessness Resources</h2>
           {resources.map((resource, index) => (

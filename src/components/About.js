@@ -4,6 +4,7 @@ import foundersData from '../data/founders';
 import FoundersModal from './Modals/FoundersModal';
 import LeaderModal from './Modals/LeaderModal';
 import leadersData from '../data/leaders';
+import logo from '../images/hthlogo.png';
 
 const centerContentStyles = {
   display: 'flex',
@@ -22,6 +23,31 @@ const missionStatementStyles = {
   backgroundColor: '#f5f5f5',
   borderRadius: '10px',
   boxShadow: '0px 4px 6px rgba(0, 0, 0, 1.4)',
+};
+
+const headerContainerStyles = {
+  position: 'relative',
+};
+
+const headerStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
+};
+
+const logoStyles = {
+  width: '100px',
+  height: 'auto',
+  marginLeft: '30%',
+  backgroundColor: 'transparent',
+};
+
+const titleStyles = {
+  fontSize: '2.5rem',
+  marginRight: '30%',
+  color: '#debf12',
+  backgroundColor: 'transparent',
 };
 
 class About extends Component {
@@ -61,10 +87,13 @@ class About extends Component {
     const { isFounderModalOpen, foundersData, selectedFounder, isLeaderModalOpen, leadersData, selectedLeader } = this.state;
 
     return (
-      <div>
-        <header className="App-header">
-          <h1>About HTH World</h1>
+      <div style={{ backgroundColor: 'black' }}>
+      <div style={headerContainerStyles}>
+        <header style={headerStyles} className="App-header">
+          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+          <h1 style={titleStyles}>HTH Worldwide</h1>
         </header>
+      </div>
         <br />
         <br />
         <br />

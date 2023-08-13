@@ -5,6 +5,7 @@ import Donate from './Modals/Donate';
 import Payment from './Modals/Payment';
 import campaignsData from '../data/campaigns';
 import drivesData from '../data/drives';
+import logo from '../images/hthlogo.png';
 
 const centerContentStyles = {
   display: 'flex',
@@ -30,6 +31,31 @@ const buttonContainerStyles = {
   justifyContent: 'space-between',
   alignItems: 'center',
   marginTop: '20px',
+};
+
+const headerContainerStyles = {
+  position: 'relative',
+};
+
+const headerStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
+};
+
+const logoStyles = {
+  width: '100px',
+  height: 'auto',
+  marginLeft: '30%',
+  backgroundColor: 'transparent',
+};
+
+const titleStyles = {
+  fontSize: '2.5rem',
+  marginRight: '30%',
+  color: '#debf12',
+  backgroundColor: 'transparent',
 };
 
 class Donation extends Component {
@@ -106,10 +132,13 @@ class Donation extends Component {
     } = this.state;
 
     return (
-      <div>
-        <header className="App-header">
-          <h1>Welcome to HTH World</h1>
+      <div style={{ backgroundColor: 'black' }}>
+      <div style={headerContainerStyles}>
+        <header style={headerStyles} className="App-header">
+          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+          <h1 style={titleStyles}>HTH Worldwide</h1>
         </header>
+      </div>
         <br />
         <br />
         <br />

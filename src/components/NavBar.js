@@ -4,7 +4,7 @@ import MenuIcon from './MenuIcon';
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav style={{ backgroundColor: 'black' }}>
       <MenuIcon />
       <ul className="nav-links">
         <li>

@@ -9,12 +9,21 @@
   width: 50%;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 1.4);
+  box-shadow: 0px 4px 6px rgba(52, 188, 170, 1.4);
 }
 
 .chapter-card:hover {
   background-color: #f0f0f0;
   transform: scale(1.05);
+}
+
+.h,
+h1,
+h2,
+h3,p {
+  text-align: center;
+  color: black;
+  background-color: transparent;
 }
 
 /* Chapters Modal Container */
@@ -37,7 +46,7 @@
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 6px rgba(52, 188, 170, 1.4);
   text-align: center;
   max-width: 400px;
 }

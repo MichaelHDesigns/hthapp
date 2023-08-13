@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../images/hthlogo.png';
 
 const cardStyles = {
   background: '#ffffff',
@@ -9,12 +10,40 @@ const cardStyles = {
   textAlign: 'center',
 };
 
+const headerContainerStyles = {
+  position: 'relative',
+};
+
+const headerStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
+};
+
+const logoStyles = {
+  width: '100px',
+  height: 'auto',
+  marginLeft: '30%',
+  backgroundColor: 'transparent',
+};
+
+const titleStyles = {
+  fontSize: '2.5rem',
+  marginRight: '30%',
+  color: '#debf12',
+  backgroundColor: 'transparent',
+};
+
 const MissionStatement = () => {
   return (
-    <div>
-      <header className="App-header">
-        <h1>About HTH World</h1>
-      </header>
+      <div style={{ backgroundColor: 'black' }}>
+      <div style={headerContainerStyles}>
+        <header style={headerStyles} className="App-header">
+          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+          <h1 style={titleStyles}>HTH Worldwide</h1>
+        </header>
+      </div>
       <br />
       <br />
       <br />

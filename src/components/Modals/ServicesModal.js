@@ -5,7 +5,7 @@ const ServicesModal = ({ shelter, onClose }) => {
     <div className="services-modal">
       <div className="services-content">
 <br />
-        <img src={shelter.image} alt={shelter.name} className="modal-image" style={{ width: '20%', height: 'auto' }}/>
+        <img src={shelter.image} alt={shelter.name} className="modal-image" style={{ width: '20%', height: 'auto', backgroundColor: 'transparent' }}/>
         <h2>{shelter.name}</h2>
         <p>{shelter.title}</p>
         <p>{shelter.address}</p>
@@ -16,7 +16,7 @@ const ServicesModal = ({ shelter, onClose }) => {
           href={`https://www.google.com/maps/dir/?api=1&destination=${shelter.lat},${shelter.lng}`}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: 'blue' }}
+          style={{ color: 'blue', backgroundColor: 'transparent' }}
         >
           Directions
         </a>

@@ -6,6 +6,32 @@ import chaptersData from '../data/chapters';
 import foodBankData from '../data/foodbank';
 import shelterData from '../data/shelter';
 import ServicesModal from './Modals/ServicesModal';
+import logo from '../images/hthlogo.png';
+
+const headerContainerStyles = {
+  position: 'relative',
+};
+
+const headerStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
+};
+
+const logoStyles = {
+  width: '100px',
+  height: 'auto',
+  marginLeft: '30%',
+  backgroundColor: 'transparent',
+};
+
+const titleStyles = {
+  fontSize: '2.5rem',
+  marginRight: '30%',
+  color: '#debf12',
+  backgroundColor: 'transparent',
+};
 
 class Service extends Component {
   state = {
@@ -59,15 +85,18 @@ class Service extends Component {
       : [39.580057522692414, -74.36045487509227];
 
     return (
-      <div>
-        <header className="App-header">
-          <h1>HTH World Services</h1>
+      <div style={{ backgroundColor: 'black' }}>
+      <div style={headerContainerStyles}>
+        <header style={headerStyles} className="App-header">
+          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+          <h1 style={titleStyles}>HTH World Services</h1>
         </header>
+      </div>
         <br />
         <br />
         <div className="map-container">
           <div className="map">
-            <h2>Search for HTH Services</h2>
+            <h2 style={{ color: 'black' }}>Search for HTH Services</h2>
             <div className="search-container">
               <input
                 type="text"
@@ -77,7 +106,7 @@ class Service extends Component {
               />
             </div>
             <MapContainer center={center} zoom={selectedChapter ? 13 : 2} className="map">
-              <TileLayer
+              <TileLayer 
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &amp; <a href="https://hth.world">HTH World</a> contributors'
               />

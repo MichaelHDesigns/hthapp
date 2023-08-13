@@ -4,7 +4,7 @@ function ChaptersModal({ chapter, onClose }) {
   return (
     <div className="chapters-modal">
       <div className="chapters-modal-content">
-        <img src={chapter.image} alt={chapter.chapter} />
+        <img src={chapter.image} alt={chapter.chapter} style={{ backgroundColor: 'transparent' }}/>
         <h2>{chapter.chapter}</h2>
         <p>Address: {chapter.address}</p>
         <p>Phone: {chapter.phone}</p>

@@ -41,7 +41,7 @@ const missionStatementStyles = {
   padding: '20px',
   backgroundColor: '#f5f5f5',
   borderRadius: '10px',
-  boxShadow: '0px 4px 6px rgba(0, 0, 0, 1.4)',
+  boxShadow: '0px 4px 6px rgba(52, 188, 170, 1.4)',
 };
 
 const donateStyles = {
@@ -52,10 +52,14 @@ const donateStyles = {
   padding: '20px',
   backgroundColor: '#f5f5f5',
   borderRadius: '10px',
-  boxShadow: '0px 4px 6px rgba(0, 0, 0, 1.4)',
+  boxShadow: '0px 4px 6px rgba(52, 188, 170, 1.4)',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+};
+
+const headerContainerStyles = {
+  position: 'relative',
 };
 
 const headerStyles = {
@@ -66,19 +70,17 @@ const headerStyles = {
 };
 
 const logoStyles = {
-  width: '100px',  // Adjust the width as needed
+  width: '100px',
   height: 'auto',
-  marginLeft: '25%',  // Add margin to the right
-};
-
-const headingStyles = {
-  fontSize: '1.5rem',
-  marginLeft: '25%',
+  marginLeft: '30%',
+  backgroundColor: 'transparent',
 };
 
 const titleStyles = {
   fontSize: '2.5rem',
   marginRight: '30%',
+  color: '#debf12',
+  backgroundColor: 'transparent',
 };
 
 function Home() {
@@ -93,11 +95,13 @@ function Home() {
   };
 
   return (
-    <div>
-      <header style={headerStyles} className="App-header">
-        <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-        <h1 style={titleStyles}>HTH Worldwide</h1>
-      </header>
+    <div style={{ backgroundColor: 'black' }}>
+      <div style={headerContainerStyles}>
+        <header style={headerStyles} className="App-header">
+          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+          <h1 style={titleStyles}>HTH Worldwide</h1>
+        </header>
+      </div>
       <div style={centerContentStyles} className="App">
         <h2>Hello! We are actively under development!</h2>
       </div>

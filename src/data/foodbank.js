@@ -1,5 +1,35 @@
 const foodBankData = [
   {
+    name: 'Feeding the Gule Coast Main Branch',
+    address: '5248 Mobile S St, Theodore, AL 36582',
+    lat: 30.58105,
+    lng: -88.16262,
+    title: 'Food Bank',
+    phone: '(251) 653-1617',
+    type: 'food',
+    image: '/Images/food.png',
+  },
+  {
+    name: 'Feeding the Gule Coast Panhandle Branch',
+    address: '5709 Industrial Blvd, Milton, FL 32583',
+    lat: 30.64123,
+    lng: -86.98469,
+    title: 'Food Bank',
+    phone: '(850) 626-1332',
+    type: 'food',
+    image: '/Images/food.png',
+  },
+  {
+    name: 'Feeding the Gule Coast Mississippi Branch',
+    address: '1501 34th St, Gulfport, MS 39501',
+    lat: 30.39105,
+    lng: -89.08080,
+    title: 'Food Bank',
+    phone: '(228) 896-6979',
+    type: 'food',
+    image: '/Images/food.png',
+  },
+  {
     name: 'Greater Tuckerton Food Bank',
     address: '148 North Green St, Tuckerton, NJ',
     lat: 39.60520,
@@ -7,7 +37,7 @@ const foodBankData = [
     title: 'Food Bank',
     phone: '609-294-4777',
     type: 'food',
-    image: '/Images/food.png', // Add the image URL here
+    image: '/Images/food.png',
   },
   {
     name: 'Community Food Bank',
@@ -17,7 +47,7 @@ const foodBankData = [
     title: 'Food Bank',
     phone: '817-924-3333',
     type: 'food',
-    image: '/Images/food.pgng', // Add the image URL here
+    image: '/Images/food.png',
   },
   {
     name: 'The Big Red Pantry',
@@ -27,7 +57,7 @@ const foodBankData = [
     title: 'Food Bank',
     phone: '559-227-8489',
     type: 'food',
-    image: '/Images/food.png', // Add the image URL here
+    image: '/Images/food.png',
   },
   // Add more food bank locations here if needed
 ];

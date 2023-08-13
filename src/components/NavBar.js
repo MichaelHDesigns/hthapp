@@ -24,7 +24,7 @@ const NavBar = () => {
             <span className="dropbtn">Services</span>
             <div className="dropdown-content">
               <Link to="/services">HTH Locator</Link>
-              <Link to="/resources">Resources</Link>
+              <Link to="/resource">Resources</Link>
             </div>
           </div>
         </li>

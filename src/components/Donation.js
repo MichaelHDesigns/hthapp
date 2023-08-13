@@ -143,7 +143,7 @@ class Donation extends Component {
         <br />
         <br />
         <div className="card-container">
-          <div className="donation-container">
+          <div>
             <div className="donation-info">
               <h2>Donate Today</h2>
               <div style={centerContentStyles}>
@@ -153,47 +153,33 @@ class Donation extends Component {
                   of helping the homeless worldwide.
                 </div>
               </div>
-              <div className="donation-form">
-                <div style={buttonContainerStyles}>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '20px', marginLeft: '20px' }}>
-                    <div style={missionStatementStyles}>
-                      Donate Today to help the homeless!!
-                    </div>
-                    <button
-                      className="donate-button"
-                      onClick={this.handleOpenModal}
-                      style={{ marginBottom: '1px' }}
-                    >
-                      Donate Now
-                    </button>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '20px' }}>
-                    <div style={missionStatementStyles}>
-                      Check out the HTH Campaigns!!
-                    </div>
-                    <button
-                      className="campaigns-button"
-                      onClick={this.handleOpenSubModal}
-                      style={{ marginBottom: '1px' }}
-                    >
-                      Campaign Drives
-                    </button>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '20px' }}>
-                    <div style={missionStatementStyles}>
-                      Check out the HTH Donation Drives!!
-                    </div>
-                    <button
-                      className="button"
-                      onClick={this.handleOpenDrivesModal}
-                      style={{ marginBottom: '1px' }}
-                    >
-                      Donation Drives
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <br />
+              <div className="donation-form" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '20vh', flexDirection: 'column' }}>
+  <div className="buttonContainerStyles">
+    <div>
+      <div style={missionStatementStyles}>
+        <p>Donate Today to help the homeless!!</p>
+       <button className="donate-button" onClick=        {this.handleOpenModal}>Donate Now</button>
+      </div>
+
+    </div>
+<br />
+    <div>
+      <div style={missionStatementStyles}>
+        <p>Check out the HTH Campaigns!!</p>
+       <button className="campaigns-button" onClick={this.handleOpenSubModal}>Campaign Drives</button>
+    </div>
+    </div>
+    <div>
+<br />
+      <div style={missionStatementStyles}>
+       <p>Check out the HTH Donation Drives!!</p>
+       <button className="button" onClick={this.handleOpenDrivesModal}>Donation Drives</button>
+    </div>
+    </div>
+  </div>
+<br />
+</div>
+
               {isDonateModalOpen && (
                 <Modal isOpen={isDonateModalOpen} onClose={this.handleCloseModal}>
                   <Donate onClose={this.handleCloseModal} />

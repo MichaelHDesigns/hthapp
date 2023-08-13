@@ -1,0 +1,118 @@
+/* Styles for the Donation component */
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.donation-container {
+  width: 80%;
+  max-width: 1000px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 1.4);
+}
+
+.donation-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.donation-info h2 {
+  font-size: 2.5rem;
+  color: #34bcaa;
+}
+
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.donate-button,
+.campaigns-button,
+.button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 6px rgba(52, 188, 170, 1.4);
+}
+
+.donate-button:hover,
+.campaigns-button:hover,
+.button:hover {
+  background-color: #2980b9;
+  box-shadow: 0px 3px 6px #debf12, 0px -3px 6px #34bcaa;
+}
+
+.modal-close {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.modal-close:hover {
+  background-color: darkred;
+  box-shadow: 0px 3px 6px #debf12, 0px -3px 6px #34bcaa;
+  color: white;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Additional styles for mobile responsiveness */
+@media (max-width: 768px) {
+  .donation-form {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adjust the margin for spacing */
+  }
+
+  .donate-button,
+  .campaigns-button,
+  .button {
+    width: 80%; /* Adjust button width for better mobile layout */
+    margin-bottom: 10px; /* Add margin to separate the buttons */
+  }
+
+  .buttonContainerStyles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttonContainerStyles > div {
+    margin: 10px 0; /* Adjust the vertical spacing between button sections */
+  }
+
+  .missionStatementStyles {
+    margin: 0; /* Remove top margin to save space */
+  }
+}

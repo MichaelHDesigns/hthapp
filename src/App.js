@@ -22,6 +22,7 @@ import './css/Services.css';
 import './css/Chapters.css';
 import './css/Campaigns.css';
 import './css/Donate.css';
+import './css/Donations.css';
 import './css/Drives.css';
 import './css/Modals.css';
 

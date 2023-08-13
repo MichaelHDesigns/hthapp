@@ -11,16 +11,22 @@ const NavBar = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/chapters">Chapters</Link>
+          <div className="dropdown">
+            <span className="dropbtn">HTH World</span>
+            <div className="dropdown-content">
+              <Link to="/chapters">HTH Chapters</Link>
+              <Link to="/donate">Donate</Link>
+            </div>
+          </div>
         </li>
         <li>
-          <Link to="/services">Services</Link>
-        </li>
-        <li>
-          <Link to="/donate">Donate</Link>
-        </li>
-        <li>
-          <Link to="/resource">Resources</Link>
+          <div className="dropdown">
+            <span className="dropbtn">Services</span>
+            <div className="dropdown-content">
+              <Link to="/services">HTH Locator</Link>
+              <Link to="/resources">Resources</Link>
+            </div>
+          </div>
         </li>
         <li>
           <div className="dropdown">

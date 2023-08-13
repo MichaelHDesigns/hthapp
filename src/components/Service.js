@@ -59,8 +59,8 @@ class Service extends Component {
   handleSearchChange = (event) => {
     const searchQuery = event.target.value.toLowerCase();
     const foodKeywords = ['food', 'meal', 'nutrition'];
-    const shelterKeywords = ['shelter', 'housing', 'accommodation', 'house'];
-    const chapterKeywords = ['hth', 'org', 'organization', 'nonprofit', 'charity', 'chapters'];
+    const shelterKeywords = ['shelter', 'housing', 'accommodation', 'house' ];
+    const chapterKeywords = ['hth', 'org', 'organization', 'nonprofit', 'charity', 'chapter'];
 
     let filteredMarkers = [];
 

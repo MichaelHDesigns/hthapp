@@ -136,7 +136,7 @@ class Donation extends Component {
       <div style={headerContainerStyles}>
         <header style={headerStyles} className="App-header">
           <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-          <h1 style={titleStyles}>HTH Worldwide</h1>
+          <h1 style={titleStyles}>HTH Donations</h1>
         </header>
       </div>
         <br />

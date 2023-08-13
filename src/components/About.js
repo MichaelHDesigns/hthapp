@@ -45,7 +45,7 @@ const logoStyles = {
 
 const titleStyles = {
   fontSize: '2.5rem',
-  marginRight: '30%',
+  marginRight: '40%',
   color: '#debf12',
   backgroundColor: 'transparent',
 };
@@ -91,7 +91,7 @@ class About extends Component {
       <div style={headerContainerStyles}>
         <header style={headerStyles} className="App-header">
           <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-          <h1 style={titleStyles}>HTH Worldwide</h1>
+          <h1 style={titleStyles}>About HTH</h1>
         </header>
       </div>
         <br />

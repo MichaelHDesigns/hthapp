@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import logo from '../images/hthlogo.png';
 
 const donateButtonStyles = {
   display: 'flex',
@@ -58,6 +58,29 @@ const donateStyles = {
   alignItems: 'center',
 };
 
+const headerStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
+};
+
+const logoStyles = {
+  width: '100px',  // Adjust the width as needed
+  height: 'auto',
+  marginLeft: '25%',  // Add margin to the right
+};
+
+const headingStyles = {
+  fontSize: '1.5rem',
+  marginLeft: '25%',
+};
+
+const titleStyles = {
+  fontSize: '2.5rem',
+  marginRight: '30%',
+};
+
 function Home() {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -69,11 +92,11 @@ function Home() {
     setIsHovered(false);
   };
 
-
   return (
     <div>
-      <header className="App-header">
-        <h1>Welcome to HTH World</h1>
+      <header style={headerStyles} className="App-header">
+        <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+        <h1 style={titleStyles}>HTH Worldwide</h1>
       </header>
       <div style={centerContentStyles} className="App">
         <h2>Hello! We are actively under development!</h2>
@@ -101,8 +124,8 @@ function Home() {
           </Link>
         </div>
       </div>
-<br />
-<br />
+      <br />
+      <br />
     </div>
   );
 }

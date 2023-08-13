@@ -8,13 +8,23 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+  animation: spin-left-to-right infinite 3s linear;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  animation: spin-left-to-right infinite 3s linear;
+  }
+}
+
+@keyframes spin-left-to-right {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
   }
 }
 

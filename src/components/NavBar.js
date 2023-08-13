@@ -12,9 +12,9 @@ const NavBar = () => {
         </li>
         <li>
           <div className="dropdown">
-            <span className="dropbtn">HTH World</span>
+            <span className="dropbtn">HTH</span>
             <div className="dropdown-content">
-              <Link to="/chapters">HTH Chapters</Link>
+              <Link to="/chapters">Chapters</Link>
               <Link to="/donate">Donate</Link>
             </div>
           </div>
@@ -32,7 +32,7 @@ const NavBar = () => {
           <div className="dropdown">
             <span className="dropbtn">About</span>
             <div className="dropdown-content">
-              <Link to="/about">HTH Board of Directors</Link>
+              <Link to="/about">HTH Directors</Link>
               <Link to="/mission">Mission Statement</Link>
             </div>
           </div>

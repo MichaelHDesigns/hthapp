@@ -56,7 +56,6 @@
 }
 
 /* Styles for the dropdown */
-
 .dropdown {
   position: relative;
   display: inline-block;
@@ -79,6 +78,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(52, 188, 170, 1.4);
   z-index: 1;
+  right: 0; /* Position the dropdown to the right */
 }
 
 .dropdown-content a {
@@ -93,6 +93,8 @@
   background-color: black;
 }
 
+/* Adjust the position of the dropdown-content based on the parent's hover state */
 .dropdown:hover .dropdown-content {
   display: block;
+  top: 100%; /* Position the dropdown downward */
 }

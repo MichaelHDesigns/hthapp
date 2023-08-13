@@ -84,14 +84,16 @@ class Service extends Component {
       ? [selectedChapter.lat, selectedChapter.lng]
       : [39.580057522692414, -74.36045487509227];
 
+    const markersToDisplay = searchQuery === '' ? [...foodBankData, ...shelterData, ...chaptersData] : filteredMarkers;
+
     return (
       <div style={{ backgroundColor: 'black' }}>
-      <div style={headerContainerStyles}>
-        <header style={headerStyles} className="App-header">
-          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-          <h1 style={titleStyles}>HTH World Services</h1>
-        </header>
-      </div>
+        <div style={headerContainerStyles}>
+          <header style={headerStyles} className="App-header">
+            <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+            <h1 style={titleStyles}>HTH World Services</h1>
+          </header>
+        </div>
         <br />
         <br />
         <div className="map-container">
@@ -110,7 +112,7 @@ class Service extends Component {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &amp; <a href="https://hth.world">HTH World</a> contributors'
               />
-              {filteredMarkers.map((marker, index) => (
+              {markersToDisplay.map((marker, index) => (
                 <Marker
                   key={index}
                   position={[marker.lat, marker.lng]}

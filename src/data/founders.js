@@ -6,7 +6,7 @@ const foundersData = [
     bio: 'Helping those in need is a way of life',
   },
   {
-    name: 'Founder 2',
+    name: 'Altcoin Cash',
     position: 'Co-Founder',
     imageUrl: '/Images/male.png',
     bio: 'Helping those in need is a way of life',

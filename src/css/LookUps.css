@@ -1,0 +1,72 @@
+/* LookUp.css */
+
+/* Main container */
+.container {
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+/* Heading */
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #34bcaa;
+}
+
+/* User List */
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+}
+
+/* User Item */
+.user-item {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* User Name */
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #34bcaa;
+}
+
+/* User Bio */
+.user-bio {
+  font-size: 14px;
+  color: #555555;
+}
+
+/* Link Style */
+.user-link {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* Hover Effect */
+.user-item:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .user-item {
+    flex-basis: calc(50% - 20px);
+  }
+}

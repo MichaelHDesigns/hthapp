@@ -16,6 +16,7 @@ const NavBar = () => {
             <div className="dropdown-content">
               <Link to="/chapters">Chapters</Link>
               <Link to="/donate">Donate</Link>
+              <Link to="/login">Login</Link>
             </div>
           </div>
         </li>
@@ -25,6 +26,7 @@ const NavBar = () => {
             <div className="dropdown-content">
               <Link to="/services">HTH Locator</Link>
               <Link to="/resource">HTH Resources</Link>
+              <Link to="/lookup">Profiles</Link>
             </div>
           </div>
         </li>

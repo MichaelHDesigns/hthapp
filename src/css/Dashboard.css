@@ -1,0 +1,110 @@
+/* Dashboard CSS */
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard-card {
+  margin-left: 10px;
+  margin-bottom: 25%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.dashboard-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-card li {
+  margin-bottom: 0.5rem;
+  flex-grow: 0;
+  padding: 0 3px;
+}
+
+.dashboard-card a {
+  color: blue;
+  text-decoration: none;
+}
+
+.dashboard-card a:hover {
+  text-decoration: underline;
+}
+
+.profile-button {
+  margin-top: 20px;
+  background-color: #34bcaa;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.profile-button:hover {
+  background-color: #debf12;
+}
+
+.logout-button {
+  margin-top: 20px;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  background-color: red;
+}
+
+/* Profile Pic */
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Profile Details */
+.profile-details {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  list-style-type: none;
+}
+
+/* Social Media Links */
+.profile-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-details ul li {
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+}
+
+.profile-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.profile-details a:hover {
+  text-decoration: underline;
+}
+

@@ -1,5 +1,7 @@
 /* Styling for the MenuIcon component */
-
+body {
+background-color: black;
+}
 
 .menu-icon {
   display: none;

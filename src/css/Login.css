@@ -1,0 +1,72 @@
+/* Login.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.login-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #34bcaa, 0 0 10px #debf12;
+  background-color: white; /* White background for the card */
+  text-align: center;
+}
+
+.login-card h2 {
+  font-weight: bold;
+  color: black; /* Black text color */
+  margin-bottom: 20px;
+}
+
+.login-button {
+  padding: 10px 20px;
+  background-color: #34bcaa; /* Blue button background */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #34bcaa, 0 0 10px #debf12;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.login-button:hover {
+  background-color: #debf12; /* Yellow button background on hover */
+  box-shadow: 0 0 10px #debf12, 0 0 10px #34bcaa;
+}
+
+.divider {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+a {
+  color: #007bff;
+}

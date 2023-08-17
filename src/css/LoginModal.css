@@ -1,0 +1,87 @@
+/* This CSS is for styling the LoginModal component */
+
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.login-modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-dialog {
+  width: 90%; /* Adjust width for smaller screens */
+  max-width: 400px;
+}
+
+.modal-content {
+  padding: 20px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  text-align: center;
+}
+
+.close-button {
+  background-color: red;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  border-radius: 25px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.modal-title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.email-spacing {
+  margin-bottom: 10px;
+  margin-right: 40px;
+}
+
+.label-spacing {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: red;
+}
+
+.loginButton {
+  background-color: #34bcaa;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}

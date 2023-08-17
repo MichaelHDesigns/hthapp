@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './css/App.css';
 import AboutUs from './components/About';
 import Chapters from './components/Chapters';
-import ChaptersModal from './components/Modals/ChaptersModal';
 import Donation from './components/Donation';
 import Footer from './components/Footer';
 import Home from './components/Landing';
@@ -12,7 +11,12 @@ import Modal from './components/Modals/Modal';
 import NavBar from './components/NavBar';
 import Resource from './components/Resource';
 import Services from './components/Service';
-import './css/Founder.css'
+import Login from './components/Login';
+import LookUp from './components/LookUps';
+import Dashboard from './components/Dashboard';
+import Profile from './components/Profiles';
+import UserProfile from './components/UserProfiles'; // Import the UserProfile component
+import './css/Founder.css';
 import './css/Leader.css';
 import './css/Resources.css';
 import './css/Footer.css';
@@ -21,10 +25,16 @@ import './css/About.css';
 import './css/Services.css';
 import './css/Chapters.css';
 import './css/Campaigns.css';
+import './css/Dashboard.css';
 import './css/Donate.css';
 import './css/Donations.css';
 import './css/Drives.css';
+import './css/Login.css';
+import './css/LoginModal.css';
+import './css/LookUps.css';
 import './css/Modals.css';
+import './css/Profiles.css';
+import './css/UserProfiles.css';
 
 class App extends Component {
   state = {
@@ -44,7 +54,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div style={{ backgroundColor: '#ccc' }}>
+        <div style={{ backgroundColor: 'black' }}>
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -55,7 +65,13 @@ class App extends Component {
               element={<Donation openModal={this.handleOpenModal} />}
             />
             <Route path="/resource" element={<Resource />} />
-            <Route path="/about" element={<AboutUs />} />                 <Route path="/mission" element={<MissionStatement />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/mission" element={<MissionStatement />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/lookup" element={<LookUp />} />
+            <Route path="/profile/:userId" element={<UserProfile />} /> {/* Use element here */}
           </Routes>
           <Modal isOpen={isModalOpen} onClose={this.handleCloseModal}>
             {/* Add content to the modal */}

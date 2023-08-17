@@ -1,0 +1,177 @@
+/* Profile.css */
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.profile-card {
+  width: 80%;
+  max-width: 600px;
+  background: #e0e0e0;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #cbcbcb, -5px -5px 10px #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.profile-card2 {
+  width: 80%;
+  max-width: 600px;
+  background: #e0e0e0;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #cbcbcb, -5px -5px 10px #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.profile-details-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-actions {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-profile-button,
+.edit-profile-button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-profile-button {
+  background-color: #8fc7ff;
+  color: white;
+}
+
+.dashboard-button {
+  margin-top: 20px;
+  background-color: #34bcaa;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.dashboard-button:hover {
+  background-color: #debf12;
+}
+
+.logout-button {
+  background-color: #ff8989;
+  color: white;
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 3%;
+}
+
+.show-create-form,
+.show-edit-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s;
+}
+
+.show-form {
+  visibility: visible;
+  opacity: 1;
+}
+
+.create-button {
+  margin-top: 20px;
+  background-color: #34bcaa;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.create-button:hover {
+  background-color: #debf12;
+}
+
+.cancel-button {
+  margin-top: 20px;
+  background-color: #ff8989;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 150px;
+}
+
+.cancel-button:hover {
+  background-color: darkred;
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.social-media-icons li {
+  margin: 0 10px;
+}
+
+
+.edit-profile-card label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.edit-profile-card-card label,
+.edit-profile-card input {
+  width: 100%;
+}

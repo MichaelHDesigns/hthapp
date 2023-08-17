@@ -71,7 +71,7 @@ function Dashboard() {
       <div style={headerContainerStyles}>
         <header style={headerStyles} className="App-header">
           <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-          <h1 style={headStyles}>Profile</h1>
+          <h1 style={headStyles}>User Home</h1>
         </header>
       </div>
       <br />

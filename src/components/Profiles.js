@@ -24,7 +24,7 @@ const logoStyles = {
 
 const titleStyles = {
   fontSize: '2.5rem',
-  marginRight: '30%',
+  marginRight: '45%',
   color: '#debf12',
   backgroundColor: 'transparent',
 };
@@ -137,7 +137,7 @@ function Profile() {
         <div style={headerContainerStyles}>
           <header style={headerStyles} className="App-header">
             <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-            <h1 style={titleStyles}>HTH Chapters</h1>
+            <h1 style={titleStyles}>User</h1>
           </header>
         </div>
       <br />

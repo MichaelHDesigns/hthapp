@@ -23,7 +23,7 @@ const logoStyles = {
 
 const titleStyles = {
   fontSize: '2.5rem',
-  marginRight: '40%',
+  marginRight: '35%',
   color: '#debf12',
   backgroundColor: 'transparent',
 };
@@ -59,7 +59,7 @@ function LookUp() {
         <div style={headerContainerStyles}>
           <header style={headerStyles} className="App-header">
             <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-            <h1 style={titleStyles}>Profiles</h1>
+            <h1 style={titleStyles}>Community</h1>
           </header>
         </div>
       <br />

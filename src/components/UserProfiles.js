@@ -23,7 +23,7 @@ const logoStyles = {
 
 const titleStyles = {
   fontSize: '2.5rem',
-  marginRight: '30%',
+  marginRight: '35%',
   color: '#debf12',
   backgroundColor: 'transparent',
 };
@@ -66,7 +66,7 @@ function UserProfile() {
         <div style={headerContainerStyles}>
           <header style={headerStyles} className="App-header">
             <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-            <h1 style={titleStyles}>HTH Community</h1>
+            <h1 style={titleStyles}>HTH Users</h1>
           </header>
         </div>
     <div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDatabase, ref as dbRef, get } from 'firebase/database';
-import { getAuth } from 'firebase/auth';
 import logo from '../images/hthlogo.png';
 
 const headerContainerStyles = {
@@ -32,8 +31,6 @@ const titleStyles = {
 function UserProfile() {
   const { userId } = useParams();
   const [profileData, setProfileData] = useState(null);
-  const [photoURL, setPhotoURL] = useState('');
-  const auth = getAuth();
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -44,9 +41,6 @@ function UserProfile() {
 
         if (profileSnapshot.exists()) {
           setProfileData(profileSnapshot.val());
-          setPhotoURL(profileSnapshot.val().photoURL || auth.currentUser?.photoURL || '');
-        } else if (auth.currentUser?.photoURL) {
-          setPhotoURL(auth.currentUser.photoURL);
         }
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -54,11 +48,13 @@ function UserProfile() {
     };
 
     fetchUserProfile();
-  }, [userId, auth]);
+  }, [userId]);
 
   if (!profileData) {
     return <div>Loading...</div>;
   }
+
+  const photoURL = profileData.photoURL || '/default-profile-pic.png';
 
   return (
     <div>
@@ -75,20 +71,18 @@ function UserProfile() {
             <div className="profile-content">
               <div className="profile-details-card">
                 <div>
-                  <img
-                    src={photoURL || '/default-profile-pic.png'}
+                { /*  <img
+                    src={photoURL}
                     alt="Profile"
                     className="profile-pic"
-                  />
+                  /> */ }
                   <div className="profile-details">
-                    <p>Hello,</p>
-                    <p>{profileData.name || profileData.email}!</p>
-                    <p>Email: {profileData.email || profileData.email}</p>
-                    <p>City: {profileData.location?.city || 'Not provided'}</p>
-                    <p>State: {profileData.location?.state || 'Not provided'}</p>
-                    <p>Country: {profileData.location?.country || 'Not provided'}</p>
-                    <p>Province: {profileData.location?.province || 'Not provided'}</p>
-                    <p>Social Media Links:</p>
+                    {profileData.name && <p>{profileData.name}</p>}
+                    {profileData.email && <p>{profileData.email}</p>}
+                    {profileData.location?.city && <p>City: {profileData.location.city}</p>}
+                    {profileData.location?.state && <p>State: {profileData.location.state}</p>}
+                    {profileData.location?.country && <p>Country: {profileData.location.country}</p>}
+                    {profileData.location?.province && <p>Province: {profileData.location.province}</p>}
                     <ul className="social-media-icons">
                       {Object.entries(profileData.socialMediaLinks || {}).map(
                         ([platform, link]) =>

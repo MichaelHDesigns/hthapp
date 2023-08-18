@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { getAuth, updateProfile, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { getDatabase, ref as dbRef, get, set } from 'firebase/database';
+import { getStorage, ref as storageStorageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+
 import logo from '../images/hthlogo.png';
 
 const headerContainerStyles = {
@@ -32,6 +34,7 @@ const titleStyles = {
 function Profile() {
   const auth = getAuth();
   const history = useNavigate();
+  const storage = getStorage();
 
   const [user, setUser] = useState(null);
   const [displayName, setDisplayName] = useState('');
@@ -50,6 +53,8 @@ function Profile() {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [profileData, setProfileData] = useState(null);
   const [showEditProfile, setShowEditProfile] = useState(false);
+  const [photo, setPhoto] = useState(null);
+  const [photoURL, setPhotoURL] = useState('');
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -68,6 +73,10 @@ function Profile() {
         if (profileExists) {
           setProfileData(profileSnapshot.val());
           setIsProfileCreated(true);
+        }
+
+        if (user.photoURL) {
+          setPhotoURL(user.photoURL);
         }
       }
     });
@@ -132,14 +141,33 @@ function Profile() {
     history('/dashboard');
   };
 
+  const handlePhotoSelected = (file) => {
+    setPhoto(file);
+  };
+
+  const handlePhotoUpload = async () => {
+    if (!photo) return;
+
+    const storageReference = getStorage();
+    const storageRef = storageStorageRef(storageReference, `${auth.currentUser.uid}/profile.jpg`);
+    await uploadBytes(storageRef, photo);
+
+    const downloadURL = await getDownloadURL(storageRef);
+    setPhotoURL(downloadURL);
+
+    await updateProfile(auth.currentUser, { photoURL: downloadURL });
+
+    setPhoto(null);
+  };
+
   return (
     <div>
-        <div style={headerContainerStyles}>
-          <header style={headerStyles} className="App-header">
-            <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-            <h1 style={titleStyles}>User</h1>
-          </header>
-        </div>
+      <div style={headerContainerStyles}>
+        <header style={headerStyles} className="App-header">
+          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+          <h1 style={titleStyles}>User</h1>
+        </header>
+      </div>
       <br />
       <div className="profile-card">
         <div className="profile-container">
@@ -147,12 +175,25 @@ function Profile() {
             <div className="profile-details-card">
               {user && profileData && (
                 <div>
-                  <img
-                    src={user.photoURL || '/default-profile-pic.png'}
-                    alt="Profile"
-                    className="profile-pic"
-                  />
                   <div className="profile-details">
+                    <img
+                      src={photoURL || '/default-profile-pic.png'}
+                      alt="Profile"
+                      className="profile-pic"
+                    />
+                    <input
+                      className="file-upload-button"
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => handlePhotoSelected(e.target.files[0])}
+                    />
+                    <button
+                      className="upload-button"
+                      onClick={handlePhotoUpload}
+                      disabled={!photo}
+                    >
+                      Upload Photo
+                    </button>
                     <p>Hello,</p>
                     <p>{profileData.name || user.email}!</p>
                     <p>Email: {profileData.email || user.email}</p>

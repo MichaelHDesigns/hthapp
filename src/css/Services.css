@@ -138,3 +138,22 @@ p {
     color: black;
     background-color: white;
 }
+
+/* For screens with a maximum width of 768px (typical mobile devices) */
+
+@media (max-width: 768px) {
+  .map {
+    width: 90vw; /* Make the map take up 90% of the viewport width */
+  }
+
+  .search-container {
+    flex-direction: column; /* Stack the input on top of the button */
+    align-items: stretch; /* Stretch the input to full width */
+    margin-bottom: 10px; /* Reduce margin for smaller space */
+  }
+
+  .search-container input {
+    width: 100%; /* Make the input full width */
+    margin-bottom: 10px; /* Add spacing between input and button */
+  }
+}

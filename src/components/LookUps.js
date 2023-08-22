@@ -32,34 +32,36 @@ function LookUp() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const database = getDatabase();
-        const profilesRef = dbRef(database, 'profiles');
+  const fetchUsers = async () => {
+    try {
+      const database = getDatabase();
+      const profilesRef = dbRef(database, 'profiles');
 
-        const profilesSnapshot = await get(profilesRef);
-        if (profilesSnapshot.exists()) {
-          const profilesData = profilesSnapshot.val();
-          const usersArray = Object.keys(profilesData).map(userId => ({
-            id: userId,
-            name: profilesData[userId].name,
-          }));
-          setUsers(usersArray);
-        }
-      } catch (error) {
-        console.error('Error fetching users:', error);
+      const profilesSnapshot = await get(profilesRef);
+      if (profilesSnapshot.exists()) {
+        const profilesData = profilesSnapshot.val();
+
+        const filteredUsersArray = Object.keys(profilesData).map(userId => ({
+          id: userId,
+          name: profilesData[userId].name,
+        })).filter(user => user.name !== "John Doe" && user.name !== "Jane Smith");
+
+        setUsers(filteredUsersArray);
       }
-    };
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
 
-    fetchUsers();
-  }, []);
+  fetchUsers();
+}, []);
 
   return (
     <div>
         <div style={headerContainerStyles}>
           <header style={headerStyles} className="App-header">
             <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-            <h1 style={titleStyles}>Community</h1>
+            <h1 style={titleStyles}>HTH Community</h1>
           </header>
         </div>
       <br />

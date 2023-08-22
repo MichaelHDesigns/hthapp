@@ -1,0 +1,54 @@
+/* HomelessModal.css */
+
+.modal-content {
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 5px 5px 15px #d9d9d9, -5px -5px 15px #ffffff;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border: none;
+  background-color: #f0f0f0;
+  box-shadow: inset 2px 2px 5px #d9d9d9, inset -2px -2px 5px #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  box-shadow: inset 3px 3px 7px #d9d9d9, inset -3px -3px 7px #ffffff;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #333;
+  box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+  box-shadow: 2px 2px 5px #d9d9d9, -2px -2px 5px #ffffff;
+}
+
+.btn-primary {
+  background-color: #35baf6;
+  border: none;
+  color: #fff;
+  box-shadow: 3px 3px 5px #2b95c3, -3px -3px 5px #42c1f9;
+}
+
+.btn-primary:hover {
+  background-color: #1b8fc7;
+  box-shadow: 2px 2px 5px #2b95c3, -2px -2px 5px #42c1f9;
+}

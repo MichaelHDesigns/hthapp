@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuIcon from './MenuIcon';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const NavBar = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <nav style={{ backgroundColor: 'black' }}>
       <MenuIcon />
@@ -16,7 +28,11 @@ const NavBar = () => {
             <div className="dropdown-content">
               <Link to="/chapters">Chapters</Link>
               <Link to="/donate">Donate</Link>
-              <Link to="/login">Login</Link>
+              {user ? (
+                <Link to="/dashboard">Dashboard</Link>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
             </div>
           </div>
         </li>
@@ -26,7 +42,8 @@ const NavBar = () => {
             <div className="dropdown-content">
               <Link to="/services">HTH Locator</Link>
               <Link to="/resource">HTH Resources</Link>
-              <Link to="/lookup">Profiles</Link>
+              <Link to="/assist">HTH Assistance</Link>
+              <Link to="/lookup">HTH Profiles</Link>
             </div>
           </div>
         </li>

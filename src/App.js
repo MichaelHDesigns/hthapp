@@ -5,6 +5,7 @@ import AboutUs from './components/About';
 import Chapters from './components/Chapters';
 import Donation from './components/Donation';
 import Footer from './components/Footer';
+import Homeless from './components/HomelessList';
 import Home from './components/Landing';
 import MissionStatement from './components/Mission';
 import Modal from './components/Modals/Modal';
@@ -15,7 +16,8 @@ import Login from './components/Login';
 import LookUp from './components/LookUps';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profiles';
-import UserProfile from './components/UserProfiles'; // Import the UserProfile component
+import UserProfile from './components/UserProfiles';
+import HomelessReg from './components/Assist';
 import './css/Founder.css';
 import './css/Leader.css';
 import './css/Resources.css';
@@ -35,6 +37,8 @@ import './css/LookUps.css';
 import './css/Modals.css';
 import './css/Profiles.css';
 import './css/UserProfiles.css';
+import './css/Assist.css';
+import './css/HomelessModal.css';
 
 class App extends Component {
   state = {
@@ -71,7 +75,9 @@ class App extends Component {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/lookup" element={<LookUp />} />
-            <Route path="/profile/:userId" element={<UserProfile />} /> {/* Use element here */}
+            <Route path="/assist" element={<HomelessReg />} />
+            <Route path="/list" element={<Homeless />} />
+            <Route path="/profile/:userId" element={<UserProfile />} />
           </Routes>
           <Modal isOpen={isModalOpen} onClose={this.handleCloseModal}>
             {/* Add content to the modal */}

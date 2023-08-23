@@ -8,6 +8,7 @@ function HomelessModal({ show, handleClose, handleSave }) {
   const [country, setCountry] = useState('');
   const [story, setStory] = useState('');
   const [needs, setNeeds] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSaveClick = () => {
     const location = { city, state, country };
@@ -18,11 +19,12 @@ function HomelessModal({ show, handleClose, handleSave }) {
     // Create the new homeless profile object
     const newHomelessProfile = {
       name,
+      email,
       location,
       story,
       needs: needsArray,
       sponsor: null, // Initially no sponsor
-      photoURL: '/path-to-your-profile-pic.jpg', // Replace with the actual path
+      photoURL: '/path-to-your-profile-pic.jpg',
     };
 
     handleSave(newHomelessProfile);
@@ -38,6 +40,11 @@ function HomelessModal({ show, handleClose, handleSave }) {
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control type="text" placeholder="Enter your name" value={name} onChange={e => setName(e.target.value)} />
+          </Form.Group>
+
+          <Form.Group controlId="email">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="text" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} />
           </Form.Group>
 
           <Form.Group controlId="city">

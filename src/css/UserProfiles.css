@@ -8,7 +8,7 @@
 /* Add borders and background color */
 .profile-card {
   width: 100%;
-  background: white;
+  background: black;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #34bcaa, -5px -5px 10px #debf12;
@@ -24,6 +24,8 @@
 
 .profile-details p {
   margin: 5px;
+  color: #34bcaa;
+  font-weight: bold;
 }
 
 .profile-pic {

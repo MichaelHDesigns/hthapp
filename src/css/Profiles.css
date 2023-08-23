@@ -1,16 +1,40 @@
 /* Profile.css */
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  box-shadow: 5px 5px 10px #34bcaa, -5px -5px 10px #debf12;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+.user-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  box-shadow: 5px 5px 10px #34bcaa, -5px -5px 10px #debf12;
+}
+
+
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: black;
 }
 
 .profile-card {
   width: 80%;
   max-width: 600px;
-  background: #e0e0e0;
+  background: black;
   border-radius: 20px;
   box-shadow: 5px 5px 10px #cbcbcb, -5px -5px 10px #ffffff;
   padding: 20px;
@@ -20,7 +44,7 @@
 .profile-card2 {
   width: 80%;
   max-width: 600px;
-  background: #e0e0e0;
+  background: black;
   border-radius: 20px;
   box-shadow: 5px 5px 10px #cbcbcb, -5px -5px 10px #ffffff;
   padding: 20px;
@@ -45,7 +69,7 @@
 
 .profile-details {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }
 
 .profile-actions {
@@ -189,10 +213,12 @@
   list-style-type: none;
   padding: 0;
   margin-top: 10px;
+  color: #34bcaa;
 }
 
 .social-media-icons li {
   margin: 0 10px;
+  color: #34bcaa;
 }
 
 

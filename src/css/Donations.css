@@ -1,10 +1,13 @@
 /* Styles for the Donation component */
 
+
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 70vh;
+  background-color: black;
+  box-shadow: 0px 3px 6px #34bcaa, 0px -3px 6px #debf12;
 }
 
 .donation-container {
@@ -13,17 +16,18 @@
   padding: 20px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 1.4);
+  box-shadow: 0px 3px 6px #34bcaa, 0px -3px 6px #debf12;
 }
 
 .donation-info {
   text-align: center;
   margin-bottom: 30px;
+  background-color: black;
 }
 
 .donation-info h2 {
   font-size: 2.5rem;
-  color: black;
+  color: #34bcaa;
 }
 
 .donation-form {
@@ -31,6 +35,20 @@
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+  box-shadow: 0px 3px 6px #34bcaa, 0px -3px 6px #debf12;
+}
+
+.donate-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  margin-left: 15%;
+  width: 75%;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0px 4px 6px rgba(52, 188, 170, 1.4);
 }
 
 .donate-button,
@@ -45,7 +63,7 @@
   font-weight: bold;
   transition: background-color 0.3s;
   margin-bottom: 10px;
-  box-shadow: 0px 4px 6px rgba(52, 188, 170, 1.4);
+  box-shadow: 0px 3px 6px #34bcaa, 0px -3px 6px #debf12;
 }
 
 .donate-button:hover,
@@ -81,25 +99,26 @@
   padding: 20px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 6px #34bcaa, 0px -3px 6px #debf12;
   width: 80%;
   max-width: 800px;
   margin: 0 auto;
 }
 
 /* Additional styles for mobile responsiveness */
+
 @media (max-width: 768px) {
   .donation-form {
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Adjust the margin for spacing */
+    margin-top: 20px;
   }
 
   .donate-button,
   .campaigns-button,
   .button {
-    width: 80%; /* Adjust button width for better mobile layout */
-    margin-bottom: 10px; /* Add margin to separate the buttons */
+    width: 80%;
+    margin-bottom: 10px;
   }
 
   .buttonContainerStyles {
@@ -109,10 +128,10 @@
   }
 
   .buttonContainerStyles > div {
-    margin: 10px 0; /* Adjust the vertical spacing between button sections */
+    margin: 10px 0;
   }
 
   .missionStatementStyles {
-    margin: 0; /* Remove top margin to save space */
+    margin: 0;
   }
 }

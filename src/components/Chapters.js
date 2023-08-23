@@ -65,7 +65,7 @@ class Chapters extends Component {
         <br />
         <br />
         <div className="form-container">
-          <p style={{ color: 'black', fontWeight: 'bold', fontSize: '25px'  }}>
+          <p style={{ color: '#34bcaa', fontWeight: 'bold', fontSize: '25px'  }}>
             To join HTH Worldwide in helping the homeless, we encourage you to open a HTH Chapter in your area so we can have a further reach globally. Fill out the form & Join HTH Chapters Today!!!
           </p>
           <button

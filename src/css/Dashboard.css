@@ -89,22 +89,30 @@
 }
 
 /* Social Media Links */
+
+.fab{
+  color: #34bcaa;
+}
+
 .profile-details ul {
   list-style-type: none;
   padding: 0;
+  color: #34bcaa;
 }
 
 .profile-details ul li {
   margin-bottom: 0.5rem;
   list-style-type: none;
+  color: #34bcaa;
 }
 
 .profile-details a {
-  color: #007bff;
+  color: #34bcaa;
   text-decoration: none;
 }
 
 .profile-details a:hover {
   text-decoration: underline;
+  color: #34bcaa;
 }
 

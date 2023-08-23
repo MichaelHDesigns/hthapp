@@ -18,6 +18,7 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profiles';
 import UserProfile from './components/UserProfiles';
 import HomelessReg from './components/Assist';
+import Sponsor from './components/Sponsors';
 import './css/Founder.css';
 import './css/Leader.css';
 import './css/Resources.css';
@@ -37,8 +38,9 @@ import './css/LookUps.css';
 import './css/Modals.css';
 import './css/Profiles.css';
 import './css/UserProfiles.css';
-import './css/Assist.css';
+import './css/List.css';
 import './css/HomelessModal.css';
+import './css/Sponsors.css';
 
 class App extends Component {
   state = {
@@ -77,6 +79,7 @@ class App extends Component {
             <Route path="/lookup" element={<LookUp />} />
             <Route path="/assist" element={<HomelessReg />} />
             <Route path="/list" element={<Homeless />} />
+            <Route path="/sponsor/:homelessId" element={<Sponsor />} />
             <Route path="/profile/:userId" element={<UserProfile />} />
           </Routes>
           <Modal isOpen={isModalOpen} onClose={this.handleCloseModal}>

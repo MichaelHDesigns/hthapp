@@ -154,8 +154,10 @@ class Donation extends Component {
                 </div>
               </div>
               <div className="donation-form" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '20vh', flexDirection: 'column' }}>
+<br />
+<br />
   <div className="buttonContainerStyles">
-    <div>
+    <div className="donate-card">
       <div style={missionStatementStyles}>
         <p>Donate Today to help the homeless!!</p>
        <button className="donate-button" onClick=        {this.handleOpenModal}>Donate Now</button>
@@ -163,13 +165,14 @@ class Donation extends Component {
 
     </div>
 <br />
-    <div>
+    <div className="donate-card">
       <div style={missionStatementStyles}>
         <p>Check out the HTH Campaigns!!</p>
        <button className="campaigns-button" onClick={this.handleOpenSubModal}>Campaign Drives</button>
     </div>
     </div>
-    <div>
+<br />
+    <div className="donate-card">
 <br />
       <div style={missionStatementStyles}>
        <p>Check out the HTH Donation Drives!!</p>

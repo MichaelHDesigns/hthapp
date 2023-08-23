@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container" style={{ backgroundColor: 'black' }}>
+      <div className="footer-container" style={{ backgroundColor: 'black' }}>
         <p style={{ color: '#debf12' }}>
           Help The Homeless Worldwide A NJ Nonprofit Corporation is a fully registered 501(c)(3) Nonprofit Corporation, EIN 83-1698753
         </p>

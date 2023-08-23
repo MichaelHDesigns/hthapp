@@ -20,9 +20,9 @@ const missionStatementStyles = {
   maxWidth: '800px',
   margin: '0 auto 20px',
   padding: '20px',
-  backgroundColor: '#f5f5f5',
+  backgroundColor: 'black',
   borderRadius: '10px',
-  boxShadow: '0px 4px 6px rgba(0, 0, 0, 1.4)',
+  boxShadow: '0px 3px 6px #34bcaa, 0px -3px 6px #debf12',
 };
 
 const headerContainerStyles = {

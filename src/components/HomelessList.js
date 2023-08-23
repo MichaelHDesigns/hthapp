@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getDatabase, ref, get } from 'firebase/database';
 import logo from '../images/hthlogo.png';
+import { Link } from 'react-router-dom';
 
 const headerContainerStyles = {
   position: 'relative',
@@ -68,27 +69,41 @@ function Homeless() {
             <h1 style={titleStyles}>Registered Users</h1>
           </header>
         </div>
-        <div>
+        <div className="grid-container">
           {filteredProfiles.map(([profileId, profile]) => (
-            <div key={profileId} className="homeless-profile-card">
-              <div className="homeless-profile-container">
-                <div className="homeless-profile-content">
-                  <div className="homeless-profile-details-card">
-                    <div>
-                      <h2>{profile.name}</h2>
-                      <p>{profile.story}</p>
-                      <p>Location: {profile.location.city}, {profile.location.state}, {profile.location.country}</p>
-                      <p>Needs: {profile.needs.join(', ')}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+           <div key={profileId} className="homeless-profile-card">
+  <div className="homeless-profile-container">
+    <div className="homeless-profile-content">
+      <div className="homeless-profile-details-card">
+        <div>
+          <h2>
+            {profile.name} 
+          </h2>
+          <h4>{profile.email}</h4>
+            {profile.sponsor ? (
+              <span className="is-sponsored">Sponsored</span>
+            ) : null}
+          {profile.sponsor ? (
+            <div className="check-icon-container">
+              <i className="fas fa-check-circle check-icon"></i>
             </div>
+          ) : null}
+          <p>{profile.story}</p>
+          <p>
+            Location: {profile.location.city}, {profile.location.state}, {profile.location.country}
+          </p>
+          <p>Needs: {profile.needs.join(', ')}</p>
+          <div className="sponsor-button">
+            <Link to={`/sponsor/${profileId}`}>Sponsor</Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
           ))}
         </div>
       </div>
-      <br />
-      <br />
       <br />
       <br />
     </div>

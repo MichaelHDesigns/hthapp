@@ -1,19 +1,41 @@
+/* Grid layout styles */
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h4{
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
 /* Profile card styles */
 
-
 .homeless-profile-card {
-  margin: 1rem auto;
+  margin: 1rem;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  background-color: white;
+  box-shadow: 0px 3px 6px #34bcaa, 0px -3px 6px #debf12;
+  background-color: black;
+  width: calc(100% - 2rem);
 }
 
 .homeless-profile-container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .homeless-profile-content {
@@ -25,30 +47,36 @@
   background-color: #f5f5f5;
   border-radius: 8px;
   box-shadow: 0px 3px 6px #34bcaa, 0px -3px 6px #debf12;
+  display: flex;
+  align-items: center;
+}
+
+/* Check icon styles */
+
+.is-sponsored {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 20px;
 }
 
 .check-icon {
   font-size: 1.5rem;
-  color: #34bcaa; /* Change the color as needed */
+  color: #34bcaa;
+  margin-left: 10px;
+  margin-bottom: 15px;
 }
 
 .check-icon-container {
   display: flex;
   align-items: center;
-  margin-right: 10px; /* Adjust the spacing */
+  justify-content: center;
+  margin-right: 10px;
 }
 
 /* Button styles */
-.button-container {
-  margin-top: 1rem;
-}
-
-a {
-
-color: white;
-text-decoration: none;
-
-}
 
 .sponsor-button {
   background-color: #3498db;
@@ -60,19 +88,12 @@ text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s;
   text-align: center;
-  display: block;
-  margin: 0 auto;
   width: 100px;
+  margin: 0 auto;
+  display: block;
 }
 
 .sponsor-button:hover {
   background-color: #2980b9;
   box-shadow: 0px 3px 6px #debf12, 0px -3px 6px #34bcaa;
-}
-
-/* Modal styles */
-.modal-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

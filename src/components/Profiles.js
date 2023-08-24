@@ -145,27 +145,38 @@ function Profile() {
     setPhoto(file);
   };
 
-  const handlePhotoUpload = async () => {
-    if (!photo) return;
+const handlePhotoUpload = async () => {
+  if (!photo) return;
 
+  try {
     const storageReference = getStorage();
-    const storageRef = storageStorageRef(storageReference, `${auth.currentUser.uid}/profile.jpg`);
+    const imageFilename = `${auth.currentUser.uid}-${Date.now()}-${photo.name}`;
+    const storageRef = storageStorageRef(storageReference, imageFilename);
     await uploadBytes(storageRef, photo);
 
     const downloadURL = await getDownloadURL(storageRef);
     setPhotoURL(downloadURL);
 
-    await updateProfile(auth.currentUser, { photoURL: downloadURL });
+    // Update the user's profile information in the database with the imageFilename
+    const database = getDatabase();
+    const profileRef = dbRef(database, `profiles/${auth.currentUser.uid}`);
+    await set(profileRef, {
+      ...profileData,
+      imageFilename: imageFilename, // Store the image filename
+    });
 
     setPhoto(null);
-  };
+  } catch (error) {
+    console.error('Error uploading photo:', error);
+  }
+};
 
   return (
     <div>
       <div style={headerContainerStyles}>
         <header style={headerStyles} className="App-header">
           <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-          <h1 style={titleStyles}>User</h1>
+          <h1 style={titleStyles}>My Profile</h1>
         </header>
       </div>
       <br />

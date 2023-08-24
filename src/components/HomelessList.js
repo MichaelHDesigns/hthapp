@@ -30,6 +30,7 @@ const titleStyles = {
 
 function Homeless() {
   const [homelessProfiles, setHomelessProfiles] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const fetchHomelessProfiles = async () => {
     try {
@@ -71,36 +72,46 @@ function Homeless() {
         </div>
         <div className="grid-container">
           {filteredProfiles.map(([profileId, profile]) => (
-           <div key={profileId} className="homeless-profile-card">
-  <div className="homeless-profile-container">
-    <div className="homeless-profile-content">
-      <div className="homeless-profile-details-card">
-        <div>
-          <h2>
-            {profile.name} 
-          </h2>
-          <h4>{profile.email}</h4>
-            {profile.sponsor ? (
-              <span className="is-sponsored">Sponsored</span>
-            ) : null}
-          {profile.sponsor ? (
-            <div className="check-icon-container">
-              <i className="fas fa-check-circle check-icon"></i>
-            </div>
-          ) : null}
-          <p>{profile.story}</p>
-          <p>
-            Location: {profile.location.city}, {profile.location.state}, {profile.location.country}
-          </p>
-          <p>Needs: {profile.needs.join(', ')}</p>
-          <div className="sponsor-button">
-            <Link to={`/sponsor/${profileId}`}>Sponsor</Link>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div key={profileId} className="homeless-profile-card">
+              <div className="homeless-profile-container">
+                <div className="homeless-profile-content">
+                  <div className="homeless-profile-details-card">
+                    <div>
+                      <h2>{profile.name}</h2>
+                      <h4>{profile.email}</h4>
+                      {profile.sponsor ? (
+                        <span className="is-sponsored">Sponsored</span>
+                      ) : null}
+                      {profile.sponsor ? (
+                        <div className="check-icon-container">
+                          <i className="fas fa-check-circle check-icon"></i>
+                        </div>
+                      ) : null}
+                      <p>{profile.story}</p>
+                      <p>
+                        Location: {profile.location.city}, {profile.location.state}, {profile.location.country}
+                      </p>
+                      <p>Needs: {profile.needs.join(', ')}</p>
+                      <div className="sponsor-button">
+                        <Link to={`/sponsor/${profileId}`}>Sponsor</Link>
+                      </div>
+                      {profile.sponsorInfo && profile.sponsorInfo.emails.length > 0 ? (
+  <div>
+    <p>Sponsors:</p>
+    <ul className="list-style-none">
+      {profile.sponsorInfo.emails.map((email, index) => (
+        <li key={index}>
+          {profile.sponsorInfo.names[index]} {email}
+        </li>
+      ))}
+    </ul>
   </div>
-</div>
+) : null}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

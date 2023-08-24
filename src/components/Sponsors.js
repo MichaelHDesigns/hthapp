@@ -33,31 +33,39 @@ function Sponsor() {
   const { homelessId } = useParams();
   const [homelessProfile, setHomelessProfile] = useState(null);
   const [sponsorName, setSponsorName] = useState('');
-  const [sponsorEmail, setSponsorEmail] = useState('');
+  const [sponsorEmails, setSponsorEmails] = useState([]);
   const [sponsorNeeds, setSponsorNeeds] = useState([]);
 
   useEffect(() => {
-    const fetchHomelessProfile = async () => {
-      try {
-        const database = getDatabase();
-        const homelessProfilesRef = dbRef(database, `homelessProfiles/${homelessId}`);
-        const homelessProfileSnapshot = await get(homelessProfilesRef);
+  const fetchHomelessProfile = async () => {
+    try {
+      const database = getDatabase();
+      const homelessProfilesRef = dbRef(database, `homelessProfiles/${homelessId}`);
+      const homelessProfileSnapshot = await get(homelessProfilesRef);
 
-        if (homelessProfileSnapshot.exists()) {
-          setHomelessProfile(homelessProfileSnapshot.val());
-        }
-      } catch (error) {
-        console.error('Error fetching homeless profile:', error);
+      if (homelessProfileSnapshot.exists()) {
+        const initialSponsorInfo = homelessProfileSnapshot.val().sponsorInfo || {
+          names: [],
+          emails: [],
+        };
+        
+        setHomelessProfile({
+          ...homelessProfileSnapshot.val(),
+          sponsorInfo: initialSponsorInfo,
+        });
       }
-    };
+    } catch (error) {
+      console.error('Error fetching homeless profile:', error);
+    }
+  };
 
-    fetchHomelessProfile();
-  }, [homelessId]);
+  fetchHomelessProfile();
+}, [homelessId]);
 
   const handleSubmit = async (e) => {
   e.preventDefault();
 
-  if (!sponsorName || !sponsorEmail) {
+  if (!sponsorName || sponsorEmails.length === 0) {
     console.error('Please provide both name and email.');
     return;
   }
@@ -69,32 +77,23 @@ function Sponsor() {
 
   try {
     const database = getDatabase();
-    
-    // Update the homeless profile to mark it as sponsored
+
     const homelessProfilesRef = ref(database, `homelessProfiles/${homelessId}`);
-    await set(homelessProfilesRef, { ...homelessProfile, sponsor: true });
-    
-    // Add the sponsor data to the sponsors database
-    const sponsorsRef = ref(database, 'sponsors');
-    const newSponsorRef = push(sponsorsRef);
+    await set(homelessProfilesRef, {
+      ...homelessProfile,
+      sponsor: true,
+      sponsorInfo: {
+        names: [...homelessProfile.sponsorInfo.names, sponsorName],
+        emails: [...homelessProfile.sponsorInfo.emails, ...sponsorEmails],
+      },
+    });
 
-    const newSponsorData = {
-      name: sponsorName,
-      email: sponsorEmail,
-      needs: sponsorNeeds.length > 0 ? sponsorNeeds : null,
-      homelessId: homelessId,
-    };
-
-    await set(newSponsorRef, newSponsorData);
-
-    console.log('Sponsorship saved successfully:', newSponsorData);
-    // You can add a success message or redirect the user to a confirmation page here.
+    // ... (rest of the logic)
   } catch (error) {
     console.error('Error saving sponsorship:', error);
     // Handle error scenario here.
   }
 };
-
 
   if (!homelessProfile) {
     return <div>Loading...</div>;
@@ -116,8 +115,13 @@ function Sponsor() {
             <input type="text" value={sponsorName} onChange={(e) => setSponsorName(e.target.value)} required />
           </div>
           <div className="form-group">
-            <label>Email</label>
-            <input type="email" value={sponsorEmail} onChange={(e) => setSponsorEmail(e.target.value)} required />
+            <label>Emails (comma-separated)</label>
+            <input
+              type="text"
+              value={sponsorEmails.join(', ')}
+              onChange={(e) => setSponsorEmails(e.target.value.split(',').map(email => email.trim()))}
+              required
+            />
           </div>
           <div className="form-group">
             <label>Needs</label>

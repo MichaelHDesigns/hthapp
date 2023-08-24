@@ -5,6 +5,13 @@ a {
   text-decoration: none;
 }
 
+.list-style-none {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
 h4{
   font-size: 15px;
   display: flex;
@@ -14,7 +21,7 @@ h4{
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   margin: 2rem auto;
   max-width: 1200px;

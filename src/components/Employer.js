@@ -366,7 +366,7 @@ const Employers = () => {
           </div>
         ) : (
           <div className="creator-button-container">
-            <p style={{ marginRight: '20px' }}>To Add an Employer or Seminar, Please Click One & Fill Out The Form</p>
+            <p style={{ marginRight: '20px' }}>User Must be Logged in to Create Employer or Seminar</p>
             {user && (
               <button className="creator-button" onClick={openSeminarCreation}>
                 Create Seminar

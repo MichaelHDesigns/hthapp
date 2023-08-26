@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getDatabase, ref, get, set, push } from 'firebase/database';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../index';
@@ -366,7 +367,9 @@ const Employers = () => {
           </div>
         ) : (
           <div className="creator-button-container">
-            <p style={{ marginRight: '20px' }}>User Must be Logged in to Create Employer or Seminar</p>
+            <p style={{ marginRight: '20px' }}>
+              Users must <Link to="/login">Login</Link> to create an Employer or Seminar
+            </p>
             {user && (
               <button className="creator-button" onClick={openSeminarCreation}>
                 Create Seminar

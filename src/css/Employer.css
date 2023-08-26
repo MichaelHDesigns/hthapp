@@ -1,0 +1,280 @@
+/* Employer.css */
+
+h, h1, h2, h3, p {
+  color: #34bcaa;
+}
+
+h4 {
+  color: #34bcaa;
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #34bcaa;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background-color: #2a9985;
+}
+
+.creator-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-left: auto;
+}
+
+.creator-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #debf12;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.creator-button:hover {
+  background-color: #34bcaa;
+  color: white;
+}
+
+/* Main container styles */
+.employers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Employer list styles */
+.employer-list {
+  flex: 1;
+  width: 100%;
+  max-width: 320px;
+  margin-right: 1rem;
+}
+
+.employer-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.employer-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.employer-list li {
+  margin-bottom: 1rem;
+}
+
+.employer-list button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  color: #34bcaa;
+  background: black;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #34bcaa, -8px -8px 16px #debf12;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.employer-list button:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 8px #debf12, -4px -4px 8px #34bcaa;
+}
+
+/* Employer details styles */
+.employer-details {
+  flex: 2;
+  width: 100%;
+  max-width: 720px;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #34bcaa, -2px -2px 4px #debf12;
+}
+.employer-details ul {
+  list-style: none;
+}
+
+.employer-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.employer-details p {
+  margin-bottom: 1rem;
+}
+
+.employer-creation {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.employer-creation h2 {
+  margin-bottom: 10px;
+  color: #34bcaa;
+}
+
+.employer-creation form {
+  display: flex;
+  flex-direction: column;
+}
+
+.employer-creation label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.employer-creation input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.employer-creation button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #34bcaa;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.employer-creation button:hover {
+  background-color: #34bcaa;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.7);
+}
+
+.employer-creation button[type="submit"] {
+  background-color: #34bcaa;
+}
+
+.employer-creation button[type="submit"]:hover {
+  background-color: #34bcaa;
+}
+
+/* Seminar popup styles */
+.seminar-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  width: 80%;
+  max-width: 400px;
+}
+
+.seminar-popup h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  gap: 5px;
+}
+
+.seminar-popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.seminar-popup label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.seminar-popup input {
+  padding: 0.5rem;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: inset 4px 4px 8px #c0c0c0, inset -4px -4px 8px #ffffff;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+}
+
+.seminar-popup .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 5px;
+}
+
+.seminar-popup button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #34bcaa;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px #c0c0c0, -4px -4px 8px #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.seminar-popup button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 4px #c0c0c0, -2px -2px 4px #ffffff;
+}
+
+/* Selected seminar details styles */
+.selected-seminar-details {
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.selected-seminar-details h3 {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Seminar details card */
+.seminar-card {
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #34bcaa, -2px -2px 4px #debf12;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.seminar-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .employers-container {
+    padding: 1rem;
+  }
+
+  .employer-list,
+  .employer-details,
+  .seminar-popup {
+    width: 100%;
+    max-width: none;
+  }
+}

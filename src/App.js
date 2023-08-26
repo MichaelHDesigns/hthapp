@@ -19,6 +19,7 @@ import Profile from './components/Profiles';
 import UserProfile from './components/UserProfiles';
 import HomelessReg from './components/Assist';
 import Sponsor from './components/Sponsors';
+import Employers from './components/Employer';
 import './css/Founder.css';
 import './css/Leader.css';
 import './css/Resources.css';
@@ -41,6 +42,7 @@ import './css/UserProfiles.css';
 import './css/List.css';
 import './css/HomelessModal.css';
 import './css/Sponsors.css';
+import './css/Employer.css';
 
 class App extends Component {
   state = {
@@ -77,6 +79,7 @@ class App extends Component {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/lookup" element={<LookUp />} />
+            <Route path="/employ" element={<Employers />} />
             <Route path="/assist" element={<HomelessReg />} />
             <Route path="/list" element={<Homeless />} />
             <Route path="/sponsor/:homelessId" element={<Sponsor />} />

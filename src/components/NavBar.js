@@ -41,6 +41,7 @@ const NavBar = () => {
             <span className="dropbtn">Services</span>
             <div className="dropdown-content">
               <Link to="/services">HTH Locator</Link>
+              <Link to="/employ">HTH Seminars</Link>
               <Link to="/resource">HTH Resources</Link>
               <Link to="/assist">HTH Assistance</Link>
               <Link to="/lookup">HTH Profiles</Link>

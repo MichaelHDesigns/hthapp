@@ -20,19 +20,17 @@ const NavBar = () => {
       <MenuIcon />
       <ul className="nav-links">
         <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
           <div className="dropdown">
-            <span className="dropbtn">HTH</span>
+            <span className="dropbtn">Home</span>
             <div className="dropdown-content">
-              <Link to="/chapters">Chapters</Link>
-              <Link to="/donate">Donate</Link>
-              {user ? (
-                <Link to="/dashboard">Dashboard</Link>
-              ) : (
-                <Link to="/login">Login</Link>
+              <Link to="/">Home</Link>
+              {user && (
+                <>
+                  {user.email && <Link to="/profile">Profile</Link>}
+                  <Link to="/dashboard">Dashboard</Link>
+                </>
               )}
+              {!user && <Link to="/login">Login</Link>}
             </div>
           </div>
         </li>
@@ -41,10 +39,16 @@ const NavBar = () => {
             <span className="dropbtn">Services</span>
             <div className="dropdown-content">
               <Link to="/services">HTH Locator</Link>
-              <Link to="/employ">HTH Seminars</Link>
-              <Link to="/resource">HTH Resources</Link>
-              <Link to="/assist">HTH Assistance</Link>
               <Link to="/lookup">HTH Profiles</Link>
+              <Link to="/donate">HTH Donations</Link>
+              <div className="sub-dropdown">
+                <span className="sub-dropbtn">HTH Services</span>
+                <div className="sub-dropdown-content">
+                  <Link to="/assist">HTH Assistance</Link>
+                  <Link to="/resource">HTH Resources</Link>
+                  <Link to="/employ">HTH Seminars</Link>
+                </div>
+              </div>
             </div>
           </div>
         </li>

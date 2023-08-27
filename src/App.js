@@ -20,6 +20,7 @@ import UserProfile from './components/UserProfiles';
 import HomelessReg from './components/Assist';
 import Sponsor from './components/Sponsors';
 import Employers from './components/Employer';
+import Wallets from './components/Wallet';
 import './css/Founder.css';
 import './css/Leader.css';
 import './css/Resources.css';
@@ -43,6 +44,7 @@ import './css/List.css';
 import './css/HomelessModal.css';
 import './css/Sponsors.css';
 import './css/Employer.css';
+import './css/Wallet.css';
 
 class App extends Component {
   state = {
@@ -82,6 +84,7 @@ class App extends Component {
             <Route path="/employ" element={<Employers />} />
             <Route path="/assist" element={<HomelessReg />} />
             <Route path="/list" element={<Homeless />} />
+            <Route path="/wallet" element={<Wallets />} />
             <Route path="/sponsor/:homelessId" element={<Sponsor />} />
             <Route path="/profile/:userId" element={<UserProfile />} />
           </Routes>

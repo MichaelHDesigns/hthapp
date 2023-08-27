@@ -20,14 +20,6 @@ background-color: black;
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Media query for smaller screens */
-
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-}
-
 /* Styling for navigation links */
 
 .nav-links {
@@ -80,7 +72,8 @@ background-color: black;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(52, 188, 170, 1.4);
   z-index: 1;
-  right: 0; /* Position the dropdown to the right */
+  right: -80%; /* Position the dropdown to the right */
+  border-radius: 10px;
 }
 
 .dropdown-content a {
@@ -100,3 +93,64 @@ background-color: black;
   display: block;
   top: 100%; /* Position the dropdown downward */
 }
+
+
+/* Style for the sub-dropdown container */
+.sub-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the sub-dropdown button */
+.sub-dropbtn {
+  border-radius: 10px;
+  color: #debf12;
+  padding: 0px 16px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+}
+
+
+/* Style for the sub-dropdown content */
+.sub-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border-radius: 10px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  right: 50px;
+}
+
+/* Style for the links in the sub-dropdown content */
+.sub-dropdown-content a {
+  color: #debf12;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* Change link color on hover */
+.sub-dropdown-content a:hover {
+  background-color: black;
+}
+
+/* Display the sub-dropdown content when hovering over the sub-dropdown button */
+.sub-dropdown:hover .sub-dropdown-content {
+  display: block;
+}
+
+/* Media query for smaller screens */
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+}
+

@@ -41,6 +41,7 @@ const NavBar = () => {
               <Link to="/services">HTH Locator</Link>
               <Link to="/lookup">HTH Profiles</Link>
               <Link to="/donate">HTH Donations</Link>
+               <Link to="/wallet">HTHW Wallet</Link>
               <div className="sub-dropdown">
                 <span className="sub-dropbtn">HTH Services</span>
                 <div className="sub-dropdown-content">

@@ -44,6 +44,7 @@ const Employers = () => {
     date: '',
     time: '',
     maxAttendees: '',
+    link: '',
   });
   const [isCreatingSeminar, setIsCreatingSeminar] = useState(false);
   const [isCreatingEmployer, setIsCreatingEmployer] = useState(false);
@@ -189,6 +190,7 @@ const Employers = () => {
         time: newSeminarData.time,
         maxAttendees: newSeminarData.maxAttendees,
         attendees: [],
+        link: newSeminarData.link,
       });
 
       await set(ref(database, `employers/${selectedEmployerId}/seminars`), updatedSeminars);
@@ -199,6 +201,7 @@ const Employers = () => {
         date: '',
         time: '',
         maxAttendees: '',
+        link: '',
       }); // Reset input fields
 
       closeSeminarCreation(); // Close the popup after creating seminar
@@ -278,6 +281,8 @@ const Employers = () => {
               <p>Title: {selectedSeminar.title}</p>
               <p>Date: {selectedSeminar.date}</p>
               <p>Time: {selectedSeminar.time}</p>
+              <p>Place: {selectedSeminar.link}</p>
+              <p>Max Attendees: {selectedSeminar.maxAttendees}</p>
                   <button
                     onClick={closeSelectedSeminar}
                     style={{
@@ -329,6 +334,16 @@ const Employers = () => {
                   value={newSeminarData.maxAttendees}
                   onChange={(e) =>
                     setNewSeminarData({ ...newSeminarData, maxAttendees: e.target.value })
+                  }
+                />
+              </label>
+              <label>
+                Link:
+                <input
+                  type="text"
+                  value={newSeminarData.link}
+                  onChange={(e) =>
+                    setNewSeminarData({ ...newSeminarData, link: e.target.value })
                   }
                 />
               </label>

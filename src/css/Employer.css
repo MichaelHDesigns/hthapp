@@ -1,14 +1,15 @@
-/* Employer.css */
-
+/* General styles for headings and paragraphs */
 h, h1, h2, h3, p {
   color: #34bcaa;
 }
 
+/* Styling for h4 headings */
 h4 {
   color: #34bcaa;
   font-size: 1.2rem;
 }
 
+/* Styling for buttons */
 button {
   padding: 10px 20px;
   border: none;
@@ -24,6 +25,7 @@ button:hover {
   background-color: #2a9985;
 }
 
+/* Container for create buttons and user message */
 .creator-button-container {
   display: flex;
   justify-content: flex-end;
@@ -41,6 +43,7 @@ button:hover {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .creator-button:hover {
   background-color: #34bcaa;
   color: white;
@@ -87,6 +90,8 @@ button:hover {
   box-shadow: 8px 8px 16px #34bcaa, -8px -8px 16px #debf12;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; /* Add this line */
+  z-index: 0; /* Add this line */
 }
 
 .employer-list button:hover {
@@ -97,11 +102,16 @@ button:hover {
 /* Employer details styles */
 .employer-details {
   flex: 2;
-  width: 100%;
+  width: 50%;
   max-width: 720px;
   padding: 1rem;
   border-radius: 10px;
+  background-color: black;
   box-shadow: 2px 2px 4px #34bcaa, -2px -2px 4px #debf12;
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  z-index: 2;
 }
 .employer-details ul {
   list-style: none;
@@ -176,19 +186,30 @@ button:hover {
   background-color: #34bcaa;
 }
 
+
 /* Seminar popup styles */
 .seminar-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 70%;
+  left: 25%;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
   padding: 2rem;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  z-index: 1000;
   width: 80%;
   max-width: 400px;
+  margin: 20px auto; /* Center horizontally */
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 3;
+}
+
+/* Apply transformation to stacked modals */
+.seminar-popup + .seminar-popup {
+  transform: translate(-50%, -50%) rotate(-3deg) scale(0.95);
+  z-index: 999; /* Make sure it's higher than the previous modal */
 }
 
 .seminar-popup h2 {
@@ -253,11 +274,17 @@ button:hover {
 
 /* Seminar details card */
 .seminar-card {
-  background-color: black;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px #34bcaa, -2px -2px 4px #debf12;
+  flex: 2;
+  width: 50%;
+  max-width: 720px;
   padding: 1rem;
-  margin-top: 1rem;
+  border-radius: 10px;
+  background-color: black;
+  box-shadow: 2px 2px 4px #34bcaa, -2px -2px 4px #debf12;
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  z-index: 4;
 }
 
 .seminar-card h3 {
@@ -273,8 +300,10 @@ button:hover {
 
   .employer-list,
   .employer-details,
-  .seminar-popup {
+  .seminar-popup,
+  .seminar-card {
     width: 100%;
     max-width: none;
+    left: 1%;
   }
 }

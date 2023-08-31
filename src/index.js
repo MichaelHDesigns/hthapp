@@ -7,6 +7,7 @@ import { getDatabase } from 'firebase/database';
 import { getFirestore } from'firebase/firestore';
 import './css/index.css';
 import App from './App';
+import { WalletProvider } from './WalletContext';
 import reportWebVitals from './reportWebVitals';
 
 // Your Firebase configuration
@@ -49,9 +50,11 @@ export async function upload(file, currentUser, setLoading) {
 const renderApp = () => {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
-    <React.StrictMode>
+  <React.StrictMode>
+    <WalletProvider>
       <App />
-    </React.StrictMode>
+    </WalletProvider>
+  </React.StrictMode>,
   );
 };
 

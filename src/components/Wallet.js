@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
+import { useWallet } from '../WalletContext';
 import logo from '../images/hthlogo.png';
 
 const headerContainerStyles = {
@@ -20,13 +21,6 @@ const logoStyles = {
   backgroundColor: 'transparent',
 };
 
-const titleStyles = {
-  fontSize: '2.5rem',
-  marginRight: '0%',
-  color: '#debf12',
-  backgroundColor: 'transparent',
-};
-
 const headStyles = {
   fontSize: '2.5rem',
   marginRight: '40%',
@@ -42,19 +36,19 @@ function Wallets() {
   const [amountToSend, setAmountToSend] = useState('');
   const [copyNotification, setCopyNotification] = useState(false);
   const [transactionStatus, setTransactionStatus] = useState('');
+  const { connected, setConnected } = useWallet();
   const web3 = new Web3(window.ethereum);
 
   useEffect(() => {
-    if (typeof window.ethereum !== 'undefined') {
+    if (connected) {
       loadWalletData();
     } else {
-      console.log('Web3 wallet extension not detected.');
+      console.log('Wallet not connected.');
     }
-  }, []);
+  }, [connected]);
 
   const loadWalletData = async () => {
     try {
-      await window.ethereum.enable();
       const accounts = await window.ethereum.request({ method: 'eth_accounts' });
       setWalletAddress(accounts[0]);
 
@@ -63,6 +57,21 @@ function Wallets() {
     } catch (error) {
       console.error('Error loading wallet data:', error);
     }
+  };
+
+  const handleConnectWallet = async () => {
+    try {
+      await window.ethereum.enable();
+      setConnected(true);
+    } catch (error) {
+      console.error('Error connecting wallet:', error);
+    }
+  };
+
+  const handleDisconnectWallet = () => {
+    setConnected(false);
+    setWalletAddress('');
+    setWalletBalance('');
   };
 
   const handleSendToken = async () => {
@@ -114,6 +123,15 @@ function Wallets() {
         <header style={headerStyles} className="App-header">
           <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
           <h1 style={headStyles}>User Wallet</h1>
+          {connected ? (
+            <button style={{ backgroundColor: 'red', color: 'black', fontWeight: 'bold' }} className="connectButton" onClick={handleDisconnectWallet}>
+              Disconnect
+            </button>
+          ) : (
+            <button className="connectButton" onClick={handleConnectWallet}>
+              Connect
+            </button>
+          )}
         </header>
       </div>
       <br />
@@ -125,8 +143,7 @@ function Wallets() {
             <p className="Wallet-address" onClick={handleCopyAddress}>
               Wallet Address: <span className="Clickable-address">{truncatedAddress}</span>
             </p>
-            <p className="Wallet-balance">Wallet Balance: 
-              <br />{walletBalance} HTHW</p>
+            <p className="Wallet-balance">Wallet Balance: <br />{walletBalance} HTHW</p>
           </div>
         )}
       </div>

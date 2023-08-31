@@ -19,6 +19,15 @@
   font-weight: bold;
 }
 
+.connectButton {
+  position: absolute;
+  top: 140%;
+  left: 12%;
+  padding: 5px 10px;
+  font-size: 14px;
+  box-shadow: 6px 10px 10px #333;
+}
+
 /* Style the transaction container */
 .Transaction-container {
   display: grid;

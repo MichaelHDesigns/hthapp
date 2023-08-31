@@ -2,8 +2,10 @@
 
 .modal-content {
   border-radius: 10px;
-  background-color: #f0f0f0;
-  box-shadow: 5px 5px 15px #d9d9d9, -5px -5px 15px #ffffff;
+  background-color: black;
+  box-shadow: 5px 5px 15px #34bcaa, -5px -5px 15px #debf12;
+  color: #34bcaa;
+  font-weight: bold;
 }
 
 .modal-header {
@@ -31,24 +33,27 @@
 }
 
 .btn-secondary {
-  background-color: #f0f0f0;
-  color: #333;
-  box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
+  background-color: red;
+  color: black;
+  font-weight: bold;
+  box-shadow: 3px 3px 5px #34bcaa, -3px -3px 5px #debf12;
 }
 
 .btn-secondary:hover {
-  background-color: #e0e0e0;
-  box-shadow: 2px 2px 5px #d9d9d9, -2px -2px 5px #ffffff;
+  background-color: black;
+  color: red;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px #debf12, -2px -2px 5px #34bcaa;
 }
 
 .btn-primary {
   background-color: #35baf6;
   border: none;
   color: #fff;
-  box-shadow: 3px 3px 5px #2b95c3, -3px -3px 5px #42c1f9;
+  box-shadow: 3px 3px 5px #34bcaa, -3px -3px 5px #debf12;
 }
 
 .btn-primary:hover {
   background-color: #1b8fc7;
-  box-shadow: 2px 2px 5px #2b95c3, -2px -2px 5px #42c1f9;
+  box-shadow: 2px 2px 5px #debf12, -2px -2px 5px #34bcaa;
 }

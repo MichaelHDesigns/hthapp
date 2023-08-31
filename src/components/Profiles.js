@@ -162,7 +162,7 @@ const handlePhotoUpload = async () => {
     const profileRef = dbRef(database, `profiles/${auth.currentUser.uid}`);
     await set(profileRef, {
       ...profileData,
-      imageFilename: imageFilename, // Store the image filename
+      imageFilename: imageFilename,
     });
 
     setPhoto(null);

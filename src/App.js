@@ -89,7 +89,6 @@ class App extends Component {
             <Route path="/profile/:userId" element={<UserProfile />} />
           </Routes>
           <Modal isOpen={isModalOpen} onClose={this.handleCloseModal}>
-            {/* Add content to the modal */}
           </Modal>
           <Footer />
         </div>

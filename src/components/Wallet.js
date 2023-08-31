@@ -103,7 +103,7 @@ function Wallets() {
       }, 3000);
     } catch (error) {
       console.error('Error sending tokens:', error);
-      setTransactionStatus('Error'); // Update status in case of error
+      setTransactionStatus('Error');
     }
   };
 

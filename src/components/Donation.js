@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import { getDatabase, ref, get, set, push } from 'firebase/database';
 import Modal from './Modals/Modal';
 import CampaignsModal from './Modals/CampaignsModal';
 import Donate from './Modals/Donate';
 import Payment from './Modals/Payment';
-import campaignsData from '../data/campaigns';
-import drivesData from '../data/drives';
 import logo from '../images/hthlogo.png';
 
 const centerContentStyles = {
@@ -72,9 +71,28 @@ class Donation extends Component {
   };
 
   componentDidMount() {
-    this.setState({
-      campaignsData: campaignsData,
-      drivesData: drivesData,
+    const db = getDatabase();
+
+    // Fetch campaigns data
+    const campaignsRef = ref(db, 'campaigns');
+    get(campaignsRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        const campaigns = snapshot.val();
+        this.setState({
+          campaignsData: Object.values(campaigns),
+        });
+      }
+    });
+
+    // Fetch drives data
+    const drivesRef = ref(db, 'drives');
+    get(drivesRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        const drives = snapshot.val();
+        this.setState({
+          drivesData: Object.values(drives),
+        });
+      }
     });
   }
 
@@ -118,6 +136,7 @@ class Donation extends Component {
     this.setState({ selectedDrive: drive, isModalOpen: true, isSubModalOpen: false, isDonateModalOpen: true });
   };
 
+
   render() {
     const {
       isModalOpen,
@@ -131,14 +150,22 @@ class Donation extends Component {
       isDonateModalOpen,
     } = this.state;
 
+    const filteredCampaigns = campaignsData.filter(campaign => {
+      return campaign.title !== 'Campaign 1' && campaign.title !== 'Campaign 2';
+    });
+
+    const filteredDrives = drivesData.filter(drive => {
+      return drive.title !== 'Drive 1' && drive.title !== 'Drive 2';
+    });
+
     return (
       <div style={{ backgroundColor: 'black' }}>
-      <div style={headerContainerStyles}>
-        <header style={headerStyles} className="App-header">
-          <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
-          <h1 style={titleStyles}>HTH Donations</h1>
-        </header>
-      </div>
+        <div style={headerContainerStyles}>
+          <header style={headerStyles} className="App-header">
+            <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
+            <h1 style={titleStyles}>HTH Donations</h1>
+          </header>
+        </div>
         <br />
         <br />
         <br />
@@ -154,35 +181,34 @@ class Donation extends Component {
                 </div>
               </div>
               <div className="donation-form" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '20vh', flexDirection: 'column' }}>
-<br />
-<br />
-  <div className="buttonContainerStyles">
-    <div className="donate-card">
-      <div style={missionStatementStyles}>
-        <p>Donate Today to help the homeless!!</p>
-       <button className="donate-button" onClick=        {this.handleOpenModal}>Donate Now</button>
-      </div>
-
-    </div>
-<br />
-    <div className="donate-card">
-      <div style={missionStatementStyles}>
-        <p>Check out the HTH Campaigns!!</p>
-       <button className="campaigns-button" onClick={this.handleOpenSubModal}>Campaign Drives</button>
-    </div>
-    </div>
-<br />
-    <div className="donate-card">
-<br />
-      <div style={missionStatementStyles}>
-       <p>Check out the HTH Donation Drives!!</p>
-       <button className="button" onClick={this.handleOpenDrivesModal}>Donation Drives</button>
-    </div>
-    </div>
-  </div>
-<br />
-</div>
-
+                <br />
+                <br />
+                <div className="buttonContainerStyles">
+                  <div className="donate-card">
+                    <div style={missionStatementStyles}>
+                      <p>Donate Today to help the homeless!!</p>
+                      <button className="donate-button" onClick={this.handleOpenModal}>Donate Now</button>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="donate-card">
+                    <div style={missionStatementStyles}>
+                      <p>Check out the HTH Campaigns!!</p>
+                                    <button className="campaigns-button" onClick={this.handleOpenSubModal}>
+                Campaign Drives
+              </button>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="donate-card">
+                    <div style={missionStatementStyles}>
+                      <p>Check out the HTH Donation Drives!!</p>
+                      <button className="button" onClick={this.handleOpenDrivesModal}>Donation Drives</button>
+                    </div>
+                  </div>
+                </div>
+                <br />
+              </div>
               {isDonateModalOpen && (
                 <Modal isOpen={isDonateModalOpen} onClose={this.handleCloseModal}>
                   <Donate onClose={this.handleCloseModal} />
@@ -200,14 +226,23 @@ class Donation extends Component {
           isOpen={isCampaignsModalOpen}
           onClose={this.handleCloseCampaignsModal}
           onOpenSubModal={this.handleOpenSubModal}
+          campaignsData={campaignsData}
         />
         {isSubModalOpen && (
           <Modal isOpen={isSubModalOpen} onClose={this.handleCloseSubModal}>
             <div className="modal-content">
-              {campaignsData.map((campaign, index) => (
+              {filteredCampaigns.map((campaign, index) => (
                 <div key={index}>
                   <h3>{campaign.title}</h3>
                   <p>{campaign.description}</p>
+                  <p style={{ fontWeight: 'bold' }}>
+                    Progress: {campaign.currentDonations} / {campaign.goal}
+                    <progress
+                      value={campaign.currentDonations}
+                      max={campaign.goal}
+                      style={{ width: '100%', height: '20px', backgroundColor: '#debf12', borderRadius: '5px' }}
+                    ></progress>
+                  </p>
                   <button
                     className="donate-button"
                     onClick={() => this.handleDonateToDrive(campaign)}
@@ -216,34 +251,42 @@ class Donation extends Component {
                   </button>
                 </div>
               ))}
-<br />
-<br />
+              <br />
+              <br />
               <button className="modal-close" onClick={this.handleCloseSubModal}>
                 Close
               </button>
             </div>
           </Modal>
         )}
-        {isDrivesModalOpen && (
+         {isDrivesModalOpen && (
           <Modal isOpen={isDrivesModalOpen} onClose={this.handleCloseDrivesModal}>
             <div className="modal-content">
-              {drivesData.map((drive, index) => (
+              {filteredDrives.map((drive, index) => (
                 <div key={index}>
                   <h3>{drive.title}</h3>
                   <p>{drive.description}</p>
+                  <p style={{ fontWeight: 'bold' }}>
+                    Progress: {drive.currentDonations} / {drive.goal}
+                    <progress
+                      value={drive.currentDonations}
+                      max={drive.goal}
+                      style={{ width: '100%', height: '20px', backgroundColor: '#debf12', borderRadius: '5px' }}
+                    ></progress>
+                  </p>
                   <button
                     className="donate-button"
                     onClick={() => {
                       this.handleDonateToDrive(drive);
-                      this.setState({ isModalOpen: true }); // Open the Payment Modal
+                      this.setState({ isModalOpen: true });
                     }}
                   >
                     Donate
                   </button>
                 </div>
               ))}
-<br />
-<br />
+              <br />
+              <br />
               <button className="modal-close" onClick={this.handleCloseDrivesModal}>
                 Close
               </button>
@@ -255,8 +298,8 @@ class Donation extends Component {
             <Payment onClose={this.handleCloseModal} selectedDrive={selectedDrive} />
           </Modal>
         )}
-<br />
-<br />
+        <br />
+        <br />
       </div>
     );
   }

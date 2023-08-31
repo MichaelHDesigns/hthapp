@@ -22,7 +22,7 @@
 }
 
 .modal-dialog {
-  width: 90%; /* Adjust width for smaller screens */
+  width: 90%;
   max-width: 400px;
 }
 

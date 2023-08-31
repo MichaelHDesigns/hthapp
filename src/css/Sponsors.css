@@ -1,9 +1,12 @@
 /* Sponsors.css */
+
 .sponsor-container {
-  background: #f0f0f0;
+  background: black;
+  color: #34bcaa;
+  font-weight: bold;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 6px 6px 12px #bcbcbc, -6px -6px 12px #ffffff;
+  box-shadow: 6px 6px 12px #debf12, -2px -2px 5px #34bcaa;
   margin: 20px auto;
   max-width: 600px;
   display: flex;
@@ -52,6 +55,7 @@ button {
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 6px 6px 12px #34bcaa, -2px -2px 5px #debf12;
 }
 
 button:hover {
@@ -59,10 +63,10 @@ button:hover {
 }
 
 .homeless-profile {
-  background: #f0f0f0;
+  background: black;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 6px 6px 12px #bcbcbc, -6px -6px 12px #ffffff;
+  box-shadow: 6px 6px 12px #34bcaa, -2px -2px 5px #debf12;
   margin: 20px auto;
   max-width: 600px;
 }
@@ -73,9 +77,9 @@ button:hover {
 }
 
 .back-button a {
-  color: #34bcaa;
+  color: #debf12;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
 }
 
 .back-button a:hover {

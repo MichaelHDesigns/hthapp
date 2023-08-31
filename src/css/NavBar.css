@@ -1,4 +1,5 @@
 /* Styling for the MenuIcon component */
+
 body {
 background-color: black;
 }
@@ -50,6 +51,7 @@ background-color: black;
 }
 
 /* Styles for the dropdown */
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -72,7 +74,7 @@ background-color: black;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(52, 188, 170, 1.4);
   z-index: 1;
-  right: -80%; /* Position the dropdown to the right */
+  right: -80%;
   border-radius: 10px;
 }
 
@@ -88,20 +90,21 @@ background-color: black;
   background-color: black;
 }
 
-/* Adjust the position of the dropdown-content based on the parent's hover state */
 .dropdown:hover .dropdown-content {
   display: block;
-  top: 100%; /* Position the dropdown downward */
+  top: 100%;
 }
 
 
 /* Style for the sub-dropdown container */
+
 .sub-dropdown {
   position: relative;
   display: inline-block;
 }
 
 /* Style for the sub-dropdown button */
+
 .sub-dropbtn {
   border-radius: 10px;
   color: #debf12;
@@ -115,6 +118,7 @@ background-color: black;
 
 
 /* Style for the sub-dropdown content */
+
 .sub-dropdown-content {
   display: none;
   position: absolute;
@@ -128,6 +132,7 @@ background-color: black;
 }
 
 /* Style for the links in the sub-dropdown content */
+
 .sub-dropdown-content a {
   color: #debf12;
   padding: 12px 16px;
@@ -137,11 +142,11 @@ background-color: black;
 }
 
 /* Change link color on hover */
+
 .sub-dropdown-content a:hover {
   background-color: black;
 }
 
-/* Display the sub-dropdown content when hovering over the sub-dropdown button */
 .sub-dropdown:hover .sub-dropdown-content {
   display: block;
 }
@@ -153,4 +158,3 @@ background-color: black;
     display: block;
   }
 }
-

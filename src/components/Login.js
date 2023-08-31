@@ -14,7 +14,6 @@ class Login extends Component {
   };
 
   componentDidMount() {
-    // Check if a user is already logged in
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.setState({ user });

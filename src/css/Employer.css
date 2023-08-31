@@ -1,15 +1,18 @@
 /* General styles for headings and paragraphs */
+
 h, h1, h2, h3, p {
   color: #34bcaa;
 }
 
 /* Styling for h4 headings */
+
 h4 {
   color: #34bcaa;
   font-size: 1.2rem;
 }
 
 /* Styling for buttons */
+
 button {
   padding: 10px 20px;
   border: none;
@@ -26,6 +29,7 @@ button:hover {
 }
 
 /* Container for create buttons and user message */
+
 .creator-button-container {
   display: flex;
   justify-content: flex-end;
@@ -50,6 +54,7 @@ button:hover {
 }
 
 /* Main container styles */
+
 .employers-container {
   display: flex;
   flex-direction: column;
@@ -58,6 +63,7 @@ button:hover {
 }
 
 /* Employer list styles */
+
 .employer-list {
   flex: 1;
   width: 100%;
@@ -90,8 +96,8 @@ button:hover {
   box-shadow: 8px 8px 16px #34bcaa, -8px -8px 16px #debf12;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  position: relative; /* Add this line */
-  z-index: 0; /* Add this line */
+  position: relative;
+  z-index: 0;
 }
 
 .employer-list button:hover {
@@ -100,6 +106,7 @@ button:hover {
 }
 
 /* Employer details styles */
+
 .employer-details {
   flex: 2;
   width: 50%;
@@ -188,6 +195,7 @@ button:hover {
 
 
 /* Seminar popup styles */
+
 .seminar-popup {
   position: fixed;
   top: 70%;
@@ -200,16 +208,17 @@ button:hover {
   z-index: 1000;
   width: 80%;
   max-width: 400px;
-  margin: 20px auto; /* Center horizontally */
+  margin: 20px auto;
   transition: transform 0.3s ease-in-out;
   position: relative;
   z-index: 3;
 }
 
 /* Apply transformation to stacked modals */
+
 .seminar-popup + .seminar-popup {
   transform: translate(-50%, -50%) rotate(-3deg) scale(0.95);
-  z-index: 999; /* Make sure it's higher than the previous modal */
+  z-index: 999;
 }
 
 .seminar-popup h2 {
@@ -262,6 +271,7 @@ button:hover {
 }
 
 /* Selected seminar details styles */
+
 .selected-seminar-details {
   padding: 1rem;
   border-top: 1px solid #ccc;
@@ -273,6 +283,7 @@ button:hover {
 }
 
 /* Seminar details card */
+
 .seminar-card {
   flex: 2;
   width: 50%;
@@ -293,6 +304,7 @@ button:hover {
 }
 
 /* Mobile responsiveness */
+
 @media (max-width: 768px) {
   .employers-container {
     padding: 1rem;

@@ -63,10 +63,10 @@ const centerContentStyles = {
 
 const centerGridStyles = {
   display: 'grid',
-  gridTemplateColumns: '1fr 1fr', // Two columns
-  gap: '10px', // Gap between columns
+  gridTemplateColumns: '1fr 1fr',
+  gap: '10px',
   justifyContent: 'center',
-  alignItems: 'stretch', // Stretch items to equal heights
+  alignItems: 'stretch',
 };
 
 const missionStatementStyles = {

@@ -143,17 +143,17 @@ p {
 
 @media (max-width: 768px) {
   .map {
-    width: 90vw; /* Make the map take up 90% of the viewport width */
+    width: 90vw;
   }
 
   .search-container {
-    flex-direction: column; /* Stack the input on top of the button */
-    align-items: stretch; /* Stretch the input to full width */
-    margin-bottom: 10px; /* Reduce margin for smaller space */
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 10px;
   }
 
   .search-container input {
-    width: 100%; /* Make the input full width */
-    margin-bottom: 10px; /* Add spacing between input and button */
+    width: 100%;
+    margin-bottom: 10px;
   }
 }

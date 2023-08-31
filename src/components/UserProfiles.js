@@ -52,7 +52,7 @@ function UserProfile() {
             const downloadURL = await getDownloadURL(photoRef);
             setPhotoURL(downloadURL);
           } else {
-            setPhotoURL(profileSnapshot.val().photoURL || ''); // Use the stored photoURL
+            setPhotoURL(profileSnapshot.val().photoURL || '');
           }
         }
       } catch (error) {

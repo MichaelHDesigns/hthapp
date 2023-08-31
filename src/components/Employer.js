@@ -85,7 +85,7 @@ const Employers = () => {
 
   const closeEmployerCreation = () => {
     setIsCreatingEmployer(false);
-    setNewEmployerData({ name: '', email: '' }); // Reset input fields
+    setNewEmployerData({ name: '', email: '' });
   };
 
   const createEmployer = async () => {
@@ -103,7 +103,7 @@ const Employers = () => {
       });
 
       fetchEmployers();
-      setNewEmployerData({ name: '', email: '' }); // Reset input fields
+      setNewEmployerData({ name: '', email: '' });
     } catch (error) {
       console.error('Error creating employer:', error);
     }
@@ -142,7 +142,6 @@ const Employers = () => {
     fetchSeminars();
 
     return () => {
-      // Unsubscribe from the onAuthStateChanged listener when component unmounts
       unsubscribe();
     };
   }, []);
@@ -204,7 +203,7 @@ const Employers = () => {
         link: '',
       }); // Reset input fields
 
-      closeSeminarCreation(); // Close the popup after creating seminar
+      closeSeminarCreation();
     } catch (error) {
       console.error('Error creating seminar:', error);
     }

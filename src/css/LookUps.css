@@ -1,6 +1,7 @@
 /* LookUp.css */
 
 /* Main container */
+
 .container {
   margin: 50px auto;
   max-width: 800px;
@@ -11,6 +12,7 @@
 }
 
 /* Heading */
+
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -18,15 +20,17 @@ h2 {
 }
 
 /* User List */
+
 .user-list {
   display: flex;
   flex-wrap: wrap;
-  list-style: none; /* Remove bullets */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 /* User Item */
+
 .user-item {
   flex: 1;
   margin: 10px;
@@ -38,6 +42,7 @@ h2 {
 }
 
 /* User Name */
+
 .user-name {
   font-size: 18px;
   font-weight: bold;
@@ -46,18 +51,21 @@ h2 {
 }
 
 /* User Bio */
+
 .user-bio {
   font-size: 14px;
   color: #555555;
 }
 
 /* Link Style */
+
 .user-link {
   text-decoration: none;
   color: #333333;
 }
 
 /* Hover Effect */
+
 .user-item:hover {
   background-color: #ffffff;
   transform: translateY(-2px);
@@ -65,6 +73,7 @@ h2 {
 }
 
 /* Mobile Responsive */
+
 @media (max-width: 768px) {
   .user-item {
     flex-basis: calc(50% - 20px);

@@ -12,20 +12,20 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px #34bcaa, 0 0 10px #debf12;
-  background-color: white; /* White background for the card */
+  background-color: white;
   text-align: center;
 }
 
 .login-card h2 {
   font-weight: bold;
-  color: black; /* Black text color */
+  color: black;
   margin-bottom: 20px;
 }
 
 .login-button {
   padding: 10px 20px;
-  background-color: #34bcaa; /* Blue button background */
-  color: white; /* White text color */
+  background-color: #34bcaa;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -34,7 +34,7 @@
 }
 
 .login-button:hover {
-  background-color: #debf12; /* Yellow button background on hover */
+  background-color: #debf12;
   box-shadow: 0 0 10px #debf12, 0 0 10px #34bcaa;
 }
 

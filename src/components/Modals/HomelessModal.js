@@ -23,7 +23,7 @@ function HomelessModal({ show, handleClose, handleSave }) {
       location,
       story,
       needs: needsArray,
-      sponsor: null, // Initially no sponsor
+      sponsor: null,
       photoURL: '/path-to-your-profile-pic.jpg',
     };
 
@@ -32,7 +32,7 @@ function HomelessModal({ show, handleClose, handleSave }) {
 
   return (
     <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>Are You Homeless? Create Your Profile</Modal.Title>
       </Modal.Header>
       <Modal.Body>

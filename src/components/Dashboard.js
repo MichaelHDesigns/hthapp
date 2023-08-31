@@ -63,7 +63,7 @@ function Dashboard() {
   };
 
   const handleGoToProfile = () => {
-    history('/profile'); // Change this path to the correct one for your Profile.js route
+    history('/profile');
   };
 
   return (

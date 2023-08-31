@@ -88,10 +88,8 @@ function Sponsor() {
       },
     });
 
-    // ... (rest of the logic)
   } catch (error) {
     console.error('Error saving sponsorship:', error);
-    // Handle error scenario here.
   }
 };
 
@@ -107,6 +105,9 @@ function Sponsor() {
           <img src={logo} style={logoStyles} className="App-logo" alt="logo" />
           <h1 style={titleStyles}>Sponsor Homeless Individual</h1>
         </header>
+      </div>
+      <div className="back-button">
+        <Link to="/list">Return to Sponsorship List</Link>
       </div>
       <div className="sponsor-container">
         <form onSubmit={handleSubmit} className="sponsor-form">
@@ -135,9 +136,6 @@ function Sponsor() {
         <p>{homelessProfile.story}</p>
         <p>Location: {homelessProfile.location.city}, {homelessProfile.location.state}, {homelessProfile.location.country}</p>
         <p>Needs: {homelessProfile.needs.join(', ')}</p>
-      </div>
-      <div className="back-button">
-        <Link to="/list">Back to Homeless List</Link>
       </div>
       <br />
       <br />

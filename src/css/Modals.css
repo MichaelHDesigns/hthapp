@@ -24,7 +24,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 80%;
+  width: 130%;
   max-width: 800px;
   margin: 0 auto;
   height: 100%;
@@ -34,8 +34,9 @@
 /* Styling for the close button */
 
 .modal-close {
-  background-color: #e74c3c;
-  color: #ffffff;
+  background-color: red;
+  color: black;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   padding: 8px 16px;

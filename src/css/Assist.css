@@ -29,16 +29,17 @@
 
 .check-icon {
   font-size: 1.5rem;
-  color: #34bcaa; /* Change the color as needed */
+  color: #34bcaa;
 }
 
 .check-icon-container {
   display: flex;
   align-items: center;
-  margin-right: 10px; /* Adjust the spacing */
+  margin-right: 10px;
 }
 
 /* Button styles */
+
 .button-container {
   margin-top: 1rem;
 }
@@ -71,6 +72,7 @@ text-decoration: none;
 }
 
 /* Modal styles */
+
 .modal-container {
   display: flex;
   align-items: center;

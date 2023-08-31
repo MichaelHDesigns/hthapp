@@ -138,6 +138,7 @@ function Wallets() {
       <br />
       <div className="Wallet-info">
         <h2>Wallet Information</h2>
+<br />
         {walletAddress && (
           <div>
             <p className="Wallet-address" onClick={handleCopyAddress}>
